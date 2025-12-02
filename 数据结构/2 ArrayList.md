@@ -81,7 +81,7 @@ public void Add(int pos, int date) {
 ---
 
 
-## 4 两个 poscheck方法
+## 4 两个 posCheck方法
 为了保证pos位置的合法性，使用pos索引是需要优先检查
 
 ```java
