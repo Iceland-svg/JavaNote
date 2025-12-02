@@ -240,10 +240,10 @@ array[i] = null;
 # （2） ArrayList源码
 ## 1 构造
 
-| ArrayList() |     |
-| ----------- | --- |
-| ArrayList() |     |
-| ArrayList() |     |
+| ArrayList()                    | 无参构造  |
+| ------------------------------ | ----- |
+| ArrayList(Collection<>)        |       |
+| ArrayList(int initialCapacity) | 指定顺序表 |
 
 
  
