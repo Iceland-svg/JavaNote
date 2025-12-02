@@ -1,4 +1,4 @@
-==手搓版本==
+# （1）手搓版本
 ## 1 构造和成员变量
 ```java
 public class MyArrayList implements IList{  
@@ -230,3 +230,24 @@ array[i] = null;
  usedSize = 0;  
 }
 ```
+
+---
+
+
+
+
+# （2） ArrayList源码
+## 1 构造
+
+| ArrayList()                        | 无参构造                       |
+| ---------------------------------- | -------------------------- |
+| ArrayList(Collection<?extends E>c) | 利用其他的Collectin来创建ArrayList |
+
+
+
+
+
+
+
+
+
