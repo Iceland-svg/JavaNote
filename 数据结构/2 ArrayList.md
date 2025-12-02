@@ -242,6 +242,7 @@ array[i] = null;
 | ArrayList()                        | 无参构造                       |
 | ---------------------------------- | -------------------------- |
 | ArrayList(Collection<?extends E>c) | 利用其他的Collectin来创建ArrayList |
+## 2常见操作
 
 
 
