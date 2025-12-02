@@ -281,8 +281,8 @@ ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
 // Java 9+ 使用 List.of（最推荐）
 ArrayList<String> list = new ArrayList<>(List.of("A", "B", "C"));
 ```
+### 3. **迭代器**
 
----
 
 ## 二、CRUD 操作（增删改查）
 
