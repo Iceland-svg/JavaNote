@@ -212,6 +212,7 @@ public void remmove(int toRemmove) {
 
 ## 10 清除所有元素
 
+
 非引用情况下 clear方法
 ```java
 public void clear() {  
@@ -243,6 +244,6 @@ array[i] = null;
 | ---------------------------------- | -------------------------- |
 | ArrayList(Collection<?extends E>c) | 利用其他的Collectin来创建ArrayList |
 
-
+ 
 
 
