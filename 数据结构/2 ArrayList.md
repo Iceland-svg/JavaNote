@@ -248,6 +248,7 @@ array[i] = null;
 
 ---
 ## 2 常见操作
+![](assets/2%20ArrayList/file-20251202201614203.png)
 
 ## 一、创建和初始化 ArrayList
 
