@@ -240,11 +240,10 @@ array[i] = null;
 # （2） ArrayList源码
 ## 1 构造
 
-
-
-|     |     |
-| --- | --- |
-|     |     |
+| ArrayList() |     |
+| ----------- | --- |
+| ArrayList() |     |
+| ArrayList() |     |
 
 
  
