@@ -213,14 +213,14 @@ public void remmove(int toRemmove) {
 ## 10 清除所有元素
 
 
-非引用情况下 clear方法
+**非引用情况下 clear方法**
 ```java
 public void clear() {  
  usedSize = 0;  
 }
 ```
 
-引用情况下 clear方法
+**引用情况下 clear方法**
 ```java
 public void clear() {  
 
@@ -248,9 +248,6 @@ array[i] = null;
 
 ---
 ## 2 常见操作
-# ArrayList 常见操作详解
-
-ArrayList 是 Java 中**最常用**的集合类，底层基于**动态数组**实现。下面我将详细讲解 ArrayList 的各种常见操作。
 
 ## 一、创建和初始化 ArrayList
 
