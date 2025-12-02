@@ -240,12 +240,11 @@ array[i] = null;
 # （2） ArrayList源码
 ## 1 构造
 
-| ArrayList()                    | 无参构造  |
-| ------------------------------ | ----- |
-| ArrayList(Collection<>)        |       |
-| ArrayList(int initialCapacity) | 指定顺序表 |
+| ArrayList()                         | 无参构造                      |
+| ----------------------------------- | ------------------------- |
+| ArrayList(Collection< ?extents E>c) | 利用其他Collection构建ArrayList |
+| ArrayList(int initialCapacity)      | 指定顺序表初始容量                 |
 
 
- 
-
-
+---
+## 常见操作
