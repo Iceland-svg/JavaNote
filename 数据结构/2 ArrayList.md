@@ -277,13 +277,6 @@ list.add("Banana");
 // 使用 Arrays.asList（返回的是固定大小的列表）
 ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
 
-// 使用双括号初始化（匿名内部类方式，不推荐）
-ArrayList<String> list = new ArrayList<String>() {{
-    add("A");
-    add("B");
-    add("C");
-}};
-
 // Java 9+ 使用 List.of（最推荐）
 ArrayList<String> list = new ArrayList<>(List.of("A", "B", "C"));
 ```
