@@ -240,9 +240,12 @@ array[i] = null;
 # （2） ArrayList源码
 ## 1 构造
 
-| ArrayList()                        | 无参构造                       |
-| ---------------------------------- | -------------------------- |
-| ArrayList(Collection<?extends E>c) | 利用其他的Collectin来创建ArrayList |
+
+
+|     |     |
+| --- | --- |
+|     |     |
+
 
  
 
