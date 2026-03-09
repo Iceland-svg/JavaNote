@@ -220,4 +220,4 @@ private static Thread mainThread ;
 ```
 
 此时的运行窗口
-![](assets/2.0%20线程创建和基础用法/file-20251223233623418.png)
+![](assets/2%20线程创建和基础用法/file-20260309220812199.png)
