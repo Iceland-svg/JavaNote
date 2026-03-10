@@ -91,6 +91,10 @@ public class SpringIocDemoApplication {
 
 由于第一种通过一个类获取可以有多个Bean,所以第一种仅凭类名来获取存在局限性
 
+### 1.2 @Service
+
+
+
 ---
 
 ## 2 方法注解
