@@ -1,7 +1,7 @@
 ## 1 类注解
 
 @Controller, @Service, @Repository, @Conponent, @Configration
-### @Controller
+### 1.1 @Controller
 
 有以下添加了@Controller的代码
 ```java
@@ -35,9 +35,13 @@ public class SpringIocDemoApplication {
 
 这里String name就是bean的名称
 
-## Bean的名称
+#### Bean的名称
 
 (1) 默认是类名的小驼峰写法 bookInfo
 (2) 特殊情况下有些Bean的名称为类名，比如UController
+
+
+---
+
 ## 2 方法注解
 @Bean
