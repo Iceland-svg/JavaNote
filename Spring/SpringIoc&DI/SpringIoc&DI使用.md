@@ -1,6 +1,8 @@
-## 类注解
+## 1 类注解
+
 @Controller, @Service, @Repository, @Conponent, @Configration
 ### @Controller
+
 有以下添加了@Controller的代码
 ```java
 @Controller  
@@ -10,5 +12,32 @@ public class UserController {
     }  
 }
 ```
+通过此代码来验证@Controller会把对象交给Spring，Spring可以帮助我们调用
+```java
+@SpringBootApplication  
+public class SpringIocDemoApplication {  
+  
+    public static void main(String[] args) {  
+        //此代码为了验证Controller把对象交给了Spring  
+    ApplicationContext context = SpringApplication  
+            .run(SpringIocDemoApplication.class, args);  
+        //从应用上下文去拿到UserController  
+    UserController bean = context.getBean(UserController.class);  
+    bean.hello();  
+    }  
+  
+}
+```
 
+其实获取bean有多种方法
+
+![](assets/SpringIoc&DI使用/file-20260310202948168.png)
+
+这里String name就是bean的名称
+
+## Bean的名称
+
+(1) 默认是类名的小驼峰写法 bookInfo
+(2) 特殊情况下有些Bean的名称为类名，比如UController
+## 2 方法注解
 @Bean
