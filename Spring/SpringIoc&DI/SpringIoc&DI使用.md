@@ -40,6 +40,27 @@ public class SpringIocDemoApplication {
 (1) 默认是类名的小驼峰写法 bookInfo
 (2) 特殊情况下有些Bean的名称为类名，比如UController
 
+如此我们可以通过名称获取bean
+
+```java
+@SpringBootApplication  
+public class SpringIocDemoApplication {  
+  
+    public static void main(String[] args) {  
+        //此代码为了验证Controller  
+    ApplicationContext context = SpringApplication  
+            .run(SpringIocDemoApplication.class, args);  
+        //从应用上下文去拿到UserController  
+        //根据类名去拿  
+    UserController bean = context.getBean(UserController.class);  
+    bean.hello();  
+        //根据名称去拿  
+     UserController userController = (UserController) context  
+             .getBean("userController");  
+    }  
+  
+}
+```
 
 ---
 
