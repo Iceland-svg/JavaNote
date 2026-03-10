@@ -89,6 +89,8 @@ public class SpringIocDemoApplication {
 
 此三种方法得到的对象是同一个，同时验证了Spring对于Bean的管理*默认*用到的是==单例模式==！！！！
 
+由于第一种通过一个类获取可以有多个Bean,所以第一种仅凭类名来获取存在局限性
+
 ---
 
 ## 2 方法注解
