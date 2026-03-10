@@ -62,6 +62,33 @@ public class SpringIocDemoApplication {
 }
 ```
 
+根据类名和名字去拿
+
+```java
+@SpringBootApplication  
+public class SpringIocDemoApplication {  
+  
+    public static void main(String[] args) {  
+        //此代码为了验证Controller  
+    ApplicationContext context = SpringApplication  
+            .run(SpringIocDemoApplication.class, args);  
+        //从应用上下文去拿到UserController  
+        //根据类名去拿  
+    UserController bean = context.getBean(UserController.class);  
+    bean.hello();  
+        //根据名称去拿  
+     UserController userController = (UserController) context  
+             .getBean("userController");  
+        //根据对象名称和类名去拿  
+     UserController userController1 = context  
+             .getBean("userController",UserController.class);  
+    }  
+      
+}
+```
+
+此三种方法得到的对象是同一个，同时验证了Spring对于Bean的管理用到的是==单例模式==！！！！
+
 ---
 
 ## 2 方法注解
