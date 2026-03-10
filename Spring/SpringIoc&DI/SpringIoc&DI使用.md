@@ -87,7 +87,7 @@ public class SpringIocDemoApplication {
 }
 ```
 
-此三种方法得到的对象是同一个，同时验证了Spring对于Bean的管理用到的是==单例模式==！！！！
+此三种方法得到的对象是同一个，同时验证了Spring对于Bean的管理*默认*用到的是==单例模式==！！！！
 
 ---
 
