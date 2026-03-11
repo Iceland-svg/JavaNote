@@ -1,6 +1,6 @@
 ## 1 类注解
 
-@Controller, @Service, @Repository, @Conponent, @Configration
+@Controller（表面层）, @Service（业务逻辑层）, @Repository（数据层）, @Conponent（组件）, @Configration（）
 ### 1.1 @Controller
 
 有以下添加了@Controller的代码
