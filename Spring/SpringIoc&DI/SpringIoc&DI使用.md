@@ -1,6 +1,6 @@
 ## 1 类注解
 
-@Controller（表面层）, @Service（业务逻辑层）, @Repository（数据层）, @Conponent（组件）, @Configration（配置）
+@Controller（控制器存储）, @Service（服务存储）, @Repository（仓库存储）, @Conponent（组件存储）, @Configration（配置存储）
 ### 1.1 @Controller
 
 有以下添加了@Controller的代码
@@ -115,6 +115,7 @@ bean.hello();
 ### @Conponent,@Configuration,@Repository
 
 此类注解亦可这样验证对象被交给了Spring容器管理
+
 
 
 ---
