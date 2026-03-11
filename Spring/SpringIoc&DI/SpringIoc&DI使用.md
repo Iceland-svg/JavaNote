@@ -93,6 +93,28 @@ public class SpringIocDemoApplication {
 
 ### 1.2 @Service
 
+同理可验证Service
+
+```java
+@Service  
+public class UserService {  
+    public void hello(){  
+        System.out.println("hello Service");  
+    }  
+}
+```
+根据类名获取Service
+```java
+UserService bean = context.getBean(UserService.class);  
+bean.hello();
+```
+
+控制台效果
+
+![](assets/SpringIoc&DI使用/file-20260311092133256.png)
+### @Conponent,@Configuration,@Repository
+
+此类注解亦可这样验证对象被交给了Spring容器管理
 
 
 ---
