@@ -169,3 +169,16 @@ UserInfo bean2 = (UserInfo) context.getBean("userInfo2");
 （2）需要为同一个类型创建多个对象
 
 注意： @Bean必须和五大注解一起使用
+
+重命名方法
+
+直接后面加括号
+
+```java
+@Bean("userInfo1")  
+@Component("userConponent2")
+//多个对象用大括号括起来
+@Bean("{userInfo1,userInfo2}")
+```
+
+
