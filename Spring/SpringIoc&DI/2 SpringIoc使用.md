@@ -31,7 +31,7 @@ public class SpringIocDemoApplication {
 
 其实获取bean有多种方法
 
-![](assets/SpringIoc&DI使用/file-20260310202948168.png)
+![](assets/2%20SpringIoc使用/file-20260311200244512.png)
 
 这里String name就是bean的名称
 
@@ -111,16 +111,18 @@ bean.hello();
 
 控制台效果
 
-![](assets/SpringIoc&DI使用/file-20260311092133256.png)
+![](assets/2%20SpringIoc使用/file-20260311200244518.png)
 ### @Conponent,@Configuration,@Repository
 
 此类注解亦可这样验证对象被交给了Spring容器管理
+
+补充，另外四个注解其实是@Conponent的衍生注解！！
 
 ---
 
 ## 2 方法注解
 ### @Bean
-可以通过@Bean这个方法注解把返回值作为一个对象交给Spring容器
+可以通过@Bean这个方法注解把返回值作为一个对象交给Spring容器，名称为方法名
 ```java
 @Bean  
 public UserInfo userInfo(){  
@@ -148,8 +150,22 @@ UserInfo bean = context.getBean(UserInfo.class);
 System.out.println(bean);
 ```
 
-![601](assets/SpringIoc&DI使用/file-20260311194938408.png)
+![601](assets/2%20SpringIoc使用/file-20260311200244519.png)
 
-![](assets/SpringIoc&DI使用/file-20260311195331137.png)
+![](assets/2%20SpringIoc使用/file-20260311200244520.png)
 
 从日志中可以看出，它是期望只有一个符合条件
+
+所以我们只能通过对象名字来获取
+
+```java
+UserInfo bean1 = (UserInfo) context.getBean("userInfo");  
+UserInfo bean2 = (UserInfo) context.getBean("userInfo2");
+```
+
+总结@Bean的应用场景
+
+（1）用于第三方
+（2）需要为同一个类型创建多个对象
+
+注意： @Bean必须和五大注解一起使用
