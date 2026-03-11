@@ -128,7 +128,7 @@ public UserInfo userInfo(){
 }
 ```
 
-局限性体现
+### 局限性体现
 
 ```java
 @Bean  
@@ -140,3 +140,16 @@ public UserInfo userInfo(){
      return new UserInfo("ls",19);  
  }
 ```
+
+此时如果再从context中获取就会报错
+
+```java
+UserInfo bean = context.getBean(UserInfo.class);  
+System.out.println(bean);
+```
+
+![601](assets/SpringIoc&DI使用/file-20260311194938408.png)
+
+![](assets/SpringIoc&DI使用/file-20260311195331137.png)
+
+从日志中可以看出，它是期望只有一个符合条件
