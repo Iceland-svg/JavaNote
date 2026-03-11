@@ -120,3 +120,23 @@ bean.hello();
 
 ## 2 方法注解
 ### @Bean
+可以通过@Bean这个方法注解把返回值作为一个对象交给Spring容器
+```java
+@Bean  
+public UserInfo userInfo(){  
+    return new UserInfo("zs",20);  
+}
+```
+
+局限性体现
+
+```java
+@Bean  
+public UserInfo userInfo(){  
+    return new UserInfo("zs",20);  
+}  
+@Bean  
+ public UserInfo userInfo2(){  
+     return new UserInfo("ls",19);  
+ }
+```
