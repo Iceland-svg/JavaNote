@@ -106,7 +106,10 @@ dbtypes:
     - db2
 ```
 
+一定要配合@Data来使用
+
 ```java
+@Data
 @Configuration  
 @ConfigurationProperties(prefix = "dbtypes")  
 public class DbtypeConfig {  
