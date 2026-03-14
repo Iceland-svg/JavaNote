@@ -96,3 +96,20 @@ public class ymlController {
 }
 ```
 
+获取键值对形式数据
+
+```java
+dbtypes:  
+  name:  
+    - mysql  
+    - sqlserver  
+    - db2
+```
+
+```java
+@Configuration  
+@ConfigurationProperties(prefix = "dbtypes")  
+public class DbtypeConfig {  
+    private List<String> name;  
+}
+```
