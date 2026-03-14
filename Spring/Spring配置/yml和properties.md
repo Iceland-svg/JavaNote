@@ -58,3 +58,25 @@ public class propertiesController {
     }  
 }
 ```
+
+读取配置文件中student前缀下的信息
+
+```java
+student:  
+  id: 1  
+  name: zhangsan  
+  age: 20
+```
+
+使用@ConfigurationProperties注解括号格式为（prefix = "前缀"）
+
+```java
+@ConfigurationProperties(prefix = "student")   
+@Configuration  
+@Data  
+public class Student1 {  
+    private String name;  
+    private Integer age;  
+    private Integer id;  
+}
+```
