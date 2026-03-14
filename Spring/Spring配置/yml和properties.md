@@ -116,3 +116,26 @@ public class DbtypeConfig {
     private List<String> name;  
 }
 ```
+
+map 类型获取
+``` java
+maptypes:
+  map:
+    k1: kk1
+    k2: kk2
+    k3: kk3
+
+```
+
+
+```java
+@Component
+@ConfigurationProperties("maptypes")
+@Data
+
+public class MapConfig {
+
+  private HashMap<String,String> map;
+
+}
+```
