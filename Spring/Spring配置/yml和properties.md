@@ -39,3 +39,22 @@ private String url;
     }  
 }
 ```
+
+Spring会根据注入的类型修改配置文件中的数据类型（默认是String）
+
+```java
+@RequestMapping("/prop")  
+@RestController  
+public class propertiesController {  
+    @Value("${spring.datasource.url}")  
+    private String url;  
+    @Value("${my.key1}")  
+    private Integer key1;  
+    @Value("${my.key2}")  
+    private Boolean key2;  
+    @RequestMapping("/read")  
+    public String readProperties(){  
+        return url;  
+    }  
+}
+```
