@@ -23,6 +23,8 @@ spring.datasource.password=root
 ```
 
 
+---
+
 ## 获取配置文件内容
 
 使用@Value注解（其实也是属性注入）
@@ -59,7 +61,9 @@ public class propertiesController {
 }
 ```
 
-读取配置文件中student前缀下的信息
+---
+
+### 读取配置文件中student前缀下的信息
 
 ```java
 student:  
@@ -96,7 +100,10 @@ public class ymlController {
 }
 ```
 
-获取键值对形式数据
+
+---
+
+### 获取键值对形式数据
 
 ```java
 dbtypes:  
@@ -117,7 +124,11 @@ public class DbtypeConfig {
 }
 ```
 
-map 类型获取
+
+---
+
+
+### map 类型获取
 ``` java
 maptypes:
   map:
@@ -126,6 +137,7 @@ maptypes:
     k3: kk3
 
 ```
+
 
 
 ```java
@@ -139,3 +151,6 @@ public class MapConfig {
 
 }
 ```
+
+
+---
