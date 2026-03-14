@@ -80,3 +80,19 @@ public class Student1 {
     private Integer id;  
 }
 ```
+获取属性之后这个对象由于@Configuration 注解会交给Spring，所以我们可以直接使用@Autowired来注入对象
+
+```java
+@RestController  
+@RequestMapping("/yml")  
+public class ymlController {  
+    @Autowired  
+    private Student1 student1;  
+    @RequestMapping("/read")  
+    public String read(){  
+        System.out.println(student1);  
+        return "success";  
+    }  
+}
+```
+
