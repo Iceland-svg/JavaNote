@@ -25,7 +25,7 @@ spring.datasource.password=root
 
 ## 获取配置文件内容
 
-使用@Value注解
+使用@Value注解（其实也是属性注入）
 括号内格式为"${XXXXXX}"
 ```java
 @RequestMapping("/prop")  
