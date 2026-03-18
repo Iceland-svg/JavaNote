@@ -70,7 +70,7 @@ MessageInfoMapper
 @Mapper  
 public interface MessageInfoMapper {  
   
-    @Insert("insert into message_info('from','to','message')value (#{from},#{to},#{message})")  
+    @Insert("insert into message_info(`from`, `to`, `message`)value (#{from},#{to},#{message})")  
     Integer insert(MessageInfo messageInfo);  
   
     @Select("select* from message_info where delete_flag = 1")  
