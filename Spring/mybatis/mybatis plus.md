@@ -33,3 +33,9 @@ public class PlusApplication {
   
 }
 ```
+
+任意创建实体类,继承BaseMapper<>
+
+```java
+public interface UserInfoMapper extends BaseMapper<UserInfo> {}
+```
