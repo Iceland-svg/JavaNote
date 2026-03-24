@@ -39,3 +39,21 @@ public class PlusApplication {
 ```java
 public interface UserInfoMapper extends BaseMapper<UserInfo> {}
 ```
+
+此时生成测试代码
+
+```java
+@SpringBootTest  
+class UserInfoMapperTest {  
+    @Autowired  
+    private UserInfoMapper userInfoMapper;  
+    @Test  
+    public void testSelect(){  
+        List<UserInfo> userInfoList = userInfoMapper.selectList(null);  
+    }  
+}
+```
+
+会发现自动就生成了这么多方法，我们当然没有写但是我们可以在BaseMapper里找到这些方法
+
+![](assets/mybatis%20plus/file-20260324215619536.png)
