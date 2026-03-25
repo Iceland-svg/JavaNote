@@ -142,4 +142,18 @@ void testQueryWrapper(){
     List<UserInfo> userInfos =userInfoMapper.selectList(queryWrapper);  
     userInfos.forEach(System.out::println);  
 }
+@Test  
+void testQueryWrapper2(){  
+    QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();  
+    queryWrapper.eq("age" ,18);  
+    userInfoMapper.delete(queryWrapper);  
+}
+@Test  
+void testQueryWrapper3(){  
+    QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();  
+    queryWrapper.lt("age",20);  
+    UserInfo userInfo = new UserInfo();  
+    userInfo.setDeleteFlag(1);  
+    userInfoMapper.update(userInfo,queryWrapper);  
+}
 ```
