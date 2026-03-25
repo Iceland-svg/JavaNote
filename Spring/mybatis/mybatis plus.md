@@ -122,6 +122,6 @@ public class UserInfo {
 
 mybatis进行的一些推断
 
-表名：根据实体类名
-主键：id
+表名：根据实体类名（不匹配可以用@TableName）
+主键：id(@TableId)
 字段名: 根据实体类属性名
