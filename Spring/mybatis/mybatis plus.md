@@ -57,3 +57,21 @@ class UserInfoMapperTest {
 会发现自动就生成了这么多方法，我们当然没有写但是我们可以在BaseMapper里找到这些方法
 
 ![](assets/mybatis%20plus/file-20260324215619536.png)
+
+添加时如何自增id-@TableId(type = IdType.AUTO) 
+
+```java
+@Data  
+public class UserInfo {  
+    @TableId(type = IdType.AUTO)  
+    private Integer id;  
+    private String username;  
+    private String password;  
+    private Integer age;  
+    private Integer deleteFlag;  
+    private Integer gender;  
+    private String phone;  
+    private Date createTime;  
+    private Date updateTime;  
+}
+```
