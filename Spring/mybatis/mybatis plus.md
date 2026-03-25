@@ -20,7 +20,7 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  
     map-underscore-to-camel-case: true #配置驼峰⾃动转换
 ```
-创建Mapper并添加@MapperScan("com.example.plus.mapper")  扫描
+创建Mapper并添加@MapperScan("com.example.plus.mapper")  扫描和Mapper注解二选一
 
 ```java
 @MapperScan("com.example.plus.mapper")  
