@@ -1,4 +1,5 @@
-1 添加依赖和配置
+添加依赖和配置
+
 ```
 <dependency>  
     <groupId>com.baomidou</groupId>  
@@ -20,6 +21,7 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  
     map-underscore-to-camel-case: true #配置驼峰⾃动转换
 ```
+
 创建Mapper并添加@MapperScan("com.example.plus.mapper")  扫描和Mapper注解二选一
 
 ```java
@@ -124,4 +126,8 @@ mybatis进行的一些推断
 
 表名：根据实体类名（不匹配可以用@TableName）
 主键：id(@TableId)
-字段名: 根据实体类属性名
+字段名: 根据实体类属性名（@TableField）
+
+---
+
+## 条件构造器
