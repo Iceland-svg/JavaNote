@@ -58,7 +58,38 @@ class UserInfoMapperTest {
 
 ![](assets/mybatis%20plus/file-20260324215619536.png)
 
-添加时如何自增id-@TableId(type = IdType.AUTO) 
+可以写出以下测试代码
+
+```java
+@SpringBootTest  
+class UserInfoMapperTest {  
+    @Autowired  
+    private UserInfoMapper userInfoMapper;  
+    @Test  
+    public void testSelect(){  
+        List<UserInfo> userInfoList = userInfoMapper.selectList(null);  
+    }  
+    @Test  
+    void selectById(){  
+        UserInfo userInfo = userInfoMapper.selectById(1);  
+    }  
+    @Test  
+    void selectByIds(){  
+        List<UserInfo> userInfoList = userInfoMapper.selectByIds(List.of(1,2));  
+    }  
+    @Test  
+    void testInsert(){  
+        UserInfo userInfo = new UserInfo();  
+        userInfo.setAge(20);  
+        userInfo.setPassword("123456");  
+        userInfo.setUsername("ww");  
+        userInfoMapper.insert(userInfo);  
+    }  
+}
+```
+
+
+插入时如何自增id-@TableId(type = IdType.AUTO) 
 
 ```java
 @Data  
