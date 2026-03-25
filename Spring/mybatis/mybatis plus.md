@@ -131,3 +131,15 @@ mybatis进行的一些推断
 ---
 
 ## 条件构造器
+
+```java
+@Test  
+void testQueryWrapper(){  
+    QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();  
+    queryWrapper.select("id","username","password","age")  
+            .eq("age",19)  
+                    .like("username","min");  
+    List<UserInfo> userInfos =userInfoMapper.selectList(queryWrapper);  
+    userInfos.forEach(System.out::println);  
+}
+```
