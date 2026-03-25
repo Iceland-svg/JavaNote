@@ -132,6 +132,8 @@ mybatis进行的一些推断
 
 ## 条件构造器
 
+### QueryWrapper
+
 ```java
 @Test  
 void testQueryWrapper(){  
@@ -157,3 +159,7 @@ void testQueryWrapper3(){
     userInfoMapper.update(userInfo,queryWrapper);  
 }
 ```
+
+### UpdateWrapper
+
+
