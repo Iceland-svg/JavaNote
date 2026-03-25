@@ -79,11 +79,20 @@ class UserInfoMapperTest {
     }  
     @Test  
     void testInsert(){  
+    //必传信息设置一下
         UserInfo userInfo = new UserInfo();  
         userInfo.setAge(20);  
         userInfo.setPassword("123456");  
         userInfo.setUsername("ww");  
         userInfoMapper.insert(userInfo);  
+    }
+    @Test  
+    void testUpdate(){  
+    //传更新后的数据
+    UserInfo userInfo = new UserInfo();  
+    userInfo.setId(6);  
+    userInfo.setUsername("lisi");  
+    userInfoMapper.updateById(userInfo);  
     }  
 }
 ```
