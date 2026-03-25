@@ -94,6 +94,10 @@ class UserInfoMapperTest {
     userInfo.setUsername("lisi");  
     userInfoMapper.updateById(userInfo);  
     }  
+    @Test  
+	void testDelete(){  
+    userInfoMapper.deleteById(5);  
+	}
 }
 ```
 
