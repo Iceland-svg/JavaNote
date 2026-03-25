@@ -119,3 +119,9 @@ public class UserInfo {
     private Date updateTime;  
 }
 ```
+
+mybatis进行的一些推断
+
+表名：根据实体类名
+主键：id
+字段名: 根据实体类属性名
