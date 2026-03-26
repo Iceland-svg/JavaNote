@@ -18,3 +18,7 @@ Redis是用键值对来存储数据的非关系型数据库
 ### Clustering
 
 Redis支持集群，一个redis存储的数据是有限的，所以一般会引入多台台主机，部署多个redis节点，每个节点存储一部分数据
+
+### High availability 
+
+高可用，redis自身支持主从结构，从节点相当于主节点的备份
