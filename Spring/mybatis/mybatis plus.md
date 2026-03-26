@@ -178,3 +178,16 @@ void testUpdateWrapper2(){
 ```
 
 
+LambdaQueryWrapper
+
+```java
+@Test  
+void testLambdaQueryWrapper(){  
+    //LambdaQueryWrapper<UserInfo> lambdaQueryWrapper = new LambdaQueryWrapper<>();  
+    QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();  
+    queryWrapper.lambda()  
+            .select(UserInfo::getGender,UserInfo::getId,UserInfo::getPassword)  
+            .eq(UserInfo::getAge,18);  
+    userInfoMapper.selectList(queryWrapper);  
+}
+```
