@@ -162,4 +162,19 @@ void testQueryWrapper3(){
 
 ### UpdateWrapper
 
+```java
+@Test  
+void  testUpdateWrapper(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper.set("age",20).set("delete_flag",0).in("id",List.of(6));  
+    userInfoMapper.update(updateWrapper);  
+}  
+@Test  
+void testUpdateWrapper2(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper.setSql("age = age + 10").in("id",List.of(6,7,8));  
+    userInfoMapper.update(updateWrapper);  
+}
+```
+
 
