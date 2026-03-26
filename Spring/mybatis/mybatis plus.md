@@ -191,3 +191,68 @@ void testLambdaQueryWrapper(){
     userInfoMapper.selectList(queryWrapper);  
 }
 ```
+
+LambdaUpdateWrapper
+
+```java
+@Test  
+void testLambdaUpdateWrapper(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper.lambda()  
+            .set(UserInfo::getAge,20)  
+            .set(UserInfo::getDeleteFlag,0)  
+            .in(UserInfo::getId,List.of(6));  
+}
+```
+
+自定义sql配合Wrapper
+
+```java
+@Mapper  
+public interface UserInfoMapper extends BaseMapper<UserInfo> {  
+  
+    @Select("select age,username,password from user_info ${ew.customSqlSegment} ")  
+    List<UserInfo> testSelect(@Param(Constants.WRAPPER) Wrapper<UserInfo> wrapper);  
+    List<UserInfo> testSelect1(@Param(Constants.WRAPPER) Wrapper<UserInfo> wrapper);  
+}
+```
+
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+  
+<mapper namespace="com.example.plus.mapper.UserInfoMapper">  
+  
+    <select id="testSelect1" resultType="com.example.plus.model.UserInfo">  
+        select username,age from user_info ${ew.customSqlSegment};  
+    </select>  
+</mapper>
+```
+
+
+
+```java
+@Test  
+void  testCutom(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper  
+            .eq("age",20)  
+            .eq("delete_flag",0)  
+            .in("id",List.of(6));  
+    userInfoMapper.testSelect(updateWrapper);  
+}  
+@Test  
+void testCustom1(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper  
+            .eq("age",20)  
+            .eq("delete_flag",0)  
+            .in("id",List.of(6));  
+    userInfoMapper.testSelect1(updateWrapper);  
+}
+```
