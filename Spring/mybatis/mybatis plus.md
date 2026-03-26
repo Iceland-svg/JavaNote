@@ -256,3 +256,25 @@ void testCustom1(){
     userInfoMapper.testSelect1(updateWrapper);  
 }
 ```
+
+带参传wrapper
+
+```java
+@Update("update user_info set age = age + #{age} ${ew.customSqlSegment}")  
+    void updateByCustom(@Param("age") Integer age,@Param(Constants.WRAPPER) Wrapper<UserInfo> wrapper);  
+}
+```
+
+测试
+
+```java
+@Test  
+void testUpdate1(){  
+    UpdateWrapper<UserInfo> updateWrapper = new UpdateWrapper<>();  
+    updateWrapper  
+            .eq("age",20)  
+            .eq("delete_flag",0)  
+            .in("id",List.of(6,7,8));  
+    userInfoMapper.updateByCustom(10,updateWrapper);  
+}
+```
