@@ -1,0 +1,1 @@
+cookie一般存客户端，一般存的是session id,session一般存在服务端，用来和客户端发过来的session id校验，验证用户登录状态
