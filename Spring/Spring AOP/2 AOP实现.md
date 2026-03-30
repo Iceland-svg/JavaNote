@@ -10,7 +10,7 @@
 
 ### 2 创建aspect包 ,写一个TimeRecord
 
-```
+```java
 @Slf4j  
 //标识，告诉Spring这是一个切面类  
 @Aspect  
