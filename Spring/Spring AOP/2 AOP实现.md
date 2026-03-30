@@ -35,6 +35,91 @@ public class TimeAspect {
 }
 ```
 
+单独写切面的方法
+
+```java
+@Slf4j  
+@Aspect  
+@Component  
+public class AspectDemo1 {  
+    @Pointcut("execution(* com.example.aop_demo.controller.*.*(..))")  
+    private void pt(){};  
+    @Around("pt()")  
+    public void testArount(ProceedingJoinPoint joinPoint) throws Throwable {  
+       log.info("执行Around前");  
+       long startTime = System.currentTimeMillis();  
+       Object result = joinPoint.proceed();  
+       long cost = System.currentTimeMillis() - startTime;  
+       log.info(joinPoint.getSignature()+"耗时：{}ms",cost);  
+    }  
+    @Before("pt()")  
+    public void teatBefore(){  
+        log.info("执行Before");  
+    }  
+    @After("pt()")  
+    public void testAfter(){  
+        log.info("执行After");  
+    }  
+    @AfterReturning("pt()")  
+    public void testAfterReturning(){  
+        log.info("执行AfterReturning");  
+    }  
+    @AfterThrowing("pt()")  
+    public void testAfterThrowing(){  
+        log.info("执行testAfterThrowing");  
+    }  
+  
+}
+```
+
+自定义注解
+
+```java
+//定义注解只能加在方法上  
+@Target(ElementType.METHOD)  
+//定义自定义注解的生命周期是运行时  
+@Retention(RetentionPolicy.RUNTIME)  
+public @interface TimeRecord {  
+  
+}
+```
+
+给测试代码添加自定义注解
+
+```java
+@RestController  
+@RequestMapping("/test")  
+public class ControllerTest {  
+    @TimeRecord  
+    @RequestMapping("/t1")  
+    public String test1(){  
+        return  "t1";  
+    }  
+    @RequestMapping("/t2")  
+    public Boolean test2(){  
+        return true;  
+    }  
+}
+```
+
+
+```java
+@Slf4j  
+@Component  
+@Aspect  
+public class TimeRecordAspect {  
+    //此处注解的意思是对于所有加了TimeRecord注解的方法生效  
+    @Around("@annotation(com.example.aop_demo.aspect.TimeRecord)")  
+    public void testArount(ProceedingJoinPoint joinPoint) throws Throwable {  
+        log.info("执行Around前");  
+        long startTime = System.currentTimeMillis();  
+        Object result = joinPoint.proceed();  
+        long cost = System.currentTimeMillis() - startTime;  
+        log.info(joinPoint.getSignature()+"耗时：{}ms",cost);  
+    }  
+}
+```
+		
 ### AOP的一些概念
 
 （1）切点
