@@ -1,7 +1,13 @@
+
+
 Bean默认是单例作用域，不管是从Apliaction获取（getBean方法）还是直接注入都是得到的同一个Bean(使用 == 可知地址也一致)
 
 多例作用域：每次使用Bean都会创建新的实例
 Request作用域：每个不同的http请求会创建不同的实例（不同url,不同请求）
 session作用域：每个http session的生命周期会创建新的实例
 application作用域：每个servletContext生命周期内创建新的实例
-websoket：每个websoket生命周期内创建新的实例
+websoket：每个websoket生命周期内创建新的实例、
+
+### Bean的生命周期
+
+（1）实例化
