@@ -36,7 +36,7 @@ public class PlusApplication {
 }
 ```
 
-任意创建实体类,继承BaseMapper<>
+任意创建实体类,继承BaseMapper<>（一定别忘了两种方法都要用！！！！！）
 
 ```java
 public interface UserInfoMapper extends BaseMapper<UserInfo> {}
