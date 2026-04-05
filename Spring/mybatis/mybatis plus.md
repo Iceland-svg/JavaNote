@@ -1,10 +1,12 @@
 添加依赖和配置
 
 ```
-<dependency>  
-    <groupId>com.baomidou</groupId>  
-    <artifactId>mybatis-plus-spring-boot4-starter</artifactId>  
-    <version>3.5.15</version>  
+<!-- Source: https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.5.12</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
