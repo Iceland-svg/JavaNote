@@ -1,4 +1,5 @@
-生成令牌，设置标签
+### 生成令牌，设置标签
+
 ```java
 public class JwtUtilsTest {  
     @Test  
@@ -20,8 +21,8 @@ public class JwtUtilsTest {
 }
 ```
 
-设置时间
-实现（服务器）校验
+### 设置时间，实现（服务器）校验
+
 ```java
 public class JwtUtilsTest {  
     //设置签名  
@@ -62,3 +63,44 @@ public class JwtUtilsTest {
     }  
 }
 ```
+
+### 项目中写法
+
+```java
+public class JwtUtils {  
+    //设置签名  
+    private static final String secreatString = "MASxsT336ZApiFCR8G9otSGkVjZ3MGrgI730Sx9z+uY=";  
+    private static final Key key = Keys.hmacShaKeyFor(secreatString.getBytes(StandardCharsets.UTF_8));  
+    //设置时间  
+    private static final long EXPIRATION_TIME = 7*24*60*60*1000;  
+  
+    /**  
+     * 生成令牌  
+     */  
+    public String genJwt(Map<String,Object> map){  
+        //生成令牌  
+        String compact = Jwts.builder()  
+                .setClaims(map)  
+                .signWith(key, SignatureAlgorithm.HS256)  
+                .setExpiration(new Date(System.currentTimeMillis()+EXPIRATION_TIME))  
+                .compact();  
+          
+        return compact;  
+    }  
+  
+    /**  
+     * 校验令牌  
+     */  
+    public Boolean check( String token){  
+        JwtParser build = Jwts.parserBuilder().setSigningKey(key).build();  
+        try {  
+            Claims body = build.parseClaimsJws(token).getBody();  
+            return true;  
+        }catch (Exception e){  
+            return false;  
+        }  
+    }  
+}
+```
+
+
