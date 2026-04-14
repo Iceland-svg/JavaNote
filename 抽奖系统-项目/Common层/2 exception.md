@@ -3,7 +3,9 @@
 
 ```java
   
-@Data  
+@Data   
+//@Data会生成自己的equals，hashcode方法，不带父类属性，易导致问题  
+@EqualsAndHashCode(callSuper = true)
 public class ControllerException extends RuntimeException{  
     /**  
      * @see com.example.lotterysysteam.common.errorcode.ControllerErrorCodeConstants  
@@ -35,6 +37,8 @@ public class ControllerException extends RuntimeException{
 ```java
   
 @Data  
+//@Data会生成自己的equals，hashcode方法，不带父类属性，易导致问题  
+@EqualsAndHashCode(callSuper = true)
 public class ServiceException extends RuntimeException{  
     /**  
      * @see com.example.lotterysysteam.common.errorcode.ServiceErrorCodeConstants  
