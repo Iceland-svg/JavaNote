@@ -2,14 +2,15 @@
 ### ControllerException
 
 ```java
+  
 @Data  
 public class ControllerException extends RuntimeException{  
-    //异常码  
-    private Integer code;  
+    /**  
+     * @see com.example.lotterysysteam.common.errorcode.ControllerErrorCodeConstants  
+     */    private Integer code;  
     //异常消息  
     private String msg;  
   
-  //为了序列化
     public ControllerException() {  
     }  
   
@@ -32,10 +33,12 @@ public class ControllerException extends RuntimeException{
 ### ServiceException
 
 ```java
+  
 @Data  
 public class ServiceException extends RuntimeException{  
-    //异常码  
-    private Integer code;  
+    /**  
+     * @see com.example.lotterysysteam.common.errorcode.ServiceErrorCodeConstants  
+     */    private Integer code;  
     //异常消息  
     private String msg;  
   
