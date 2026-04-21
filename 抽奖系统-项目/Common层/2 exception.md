@@ -1,3 +1,5 @@
+这个包用于自定义异常
+
 ![](assets/2%20exception/file-20260414214003328.png)
 ### ControllerException
 
