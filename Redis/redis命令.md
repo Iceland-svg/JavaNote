@@ -5,3 +5,5 @@
 #### set
 
 存key和value
+
+### 2 keys命令
