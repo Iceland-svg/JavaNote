@@ -14,12 +14,16 @@ keys * 占所有字符
 keys ? 占单个字符
 keys  [ 选择字符 ]
 
-### exsist 查询存在
+### 3 exsist 查询存在
 
 expire 给指定的key设置过期时间
 expire 设置秒级，成功返回1，失败0
 pexpire 设置毫秒级
 
-### ttl
+### 4 ttl
 
 查看过期时间还剩多少（time to live）
+
+---
+
+## key的过期策略
