@@ -12,4 +12,7 @@
 keys * 占所有字符
 keys ? 占单个字符
 keys  [ 选择字符 ]
+
+###
 exsist 查询存在
+expire 给指定的key设置过期时间
