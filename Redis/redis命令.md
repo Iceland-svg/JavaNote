@@ -15,4 +15,7 @@ keys  [ 选择字符 ]
 
 ###
 exsist 查询存在
+
 expire 给指定的key设置过期时间
+expire 设置秒级，成功返回1，失败0
+pexpire 设置毫秒级
