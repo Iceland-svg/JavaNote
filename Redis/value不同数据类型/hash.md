@@ -23,3 +23,11 @@ hget key1 f1
 
 判断hash中是否有指定字段
 
+```
+hexist key1 f1
+1
+
+hexist key1 f2
+0
+```
+
