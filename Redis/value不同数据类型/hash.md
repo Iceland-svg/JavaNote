@@ -46,3 +46,11 @@ hkeys命令
 
 先根据key找到对应的hash再遍历hash
 
+```
+hset key h1 111 f2 222 f3 333
+hkeys key
+"f1"
+"f2"
+"f3"
+```
+该操作存在风险，类似于keys*
