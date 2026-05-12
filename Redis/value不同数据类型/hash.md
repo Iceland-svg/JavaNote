@@ -12,5 +12,9 @@ hset key1 f1 111
 ### hget命令
 
 ```
-hget key value [filed]
+hget key value filed
+
+hget key1 f1
+
+"111"
 ```
