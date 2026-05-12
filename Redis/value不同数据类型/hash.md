@@ -67,4 +67,6 @@ hmeget key f1 f2 f3
 "333"
 ```
 
-hgetall是查询所有
+hgetall是获取所有
+
+尽量去使用hmget这种渐进式遍历，而不是hgetall, hvals, hkeys这种一次遍历完的
