@@ -42,3 +42,7 @@ hdel key1 f1
 ```
 
 
+hkeys命令
+
+先根据key找到对应的hash再遍历hash
+
