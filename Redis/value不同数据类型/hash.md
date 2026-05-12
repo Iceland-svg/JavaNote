@@ -33,4 +33,12 @@ hexist key1 f2
 
 ### hdel命令
 
+返回删除的字段个数
+
+```
+hdel key1 f1
+
+1
+```
+
 
