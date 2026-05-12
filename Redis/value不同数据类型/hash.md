@@ -56,7 +56,7 @@ hkeys key
 
 !  !  ! 该操作存在风险，类似于keys*
 
-### hmget 
+### hmget 命令
 
 一次查询多个
 
@@ -73,8 +73,13 @@ hgetall是获取所有
 
 ### hlen命令
 
-获取hash中字段的个数
+获取hash中字段的个数,不需要遍历
 
 ```
-hlen 
+hlen key
+4
 ```
+
+### hsetnx命令
+
+不存在设置成功
