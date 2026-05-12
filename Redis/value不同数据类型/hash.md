@@ -73,7 +73,7 @@ hgetall是获取所有
 
 ### hlen命令
 
-获取hash中字段的个数,不需要遍历
+获取hash中字段的个数,不需要遍历(O(1)
 
 ```
 hlen key
@@ -83,3 +83,23 @@ hlen key
 ### hsetnx命令
 
 不存在则设置成功
+
+### hincrby命令
+
+hash的value也可以当数字处理
+
+此命令可用来加减整数
+
+```
+hincrby key f1 10
+121
+hincrby key f1 -20
+101
+```
+
+### hincrbyfloat命令
+
+```
+hincrby key f1 0.9
+101.9
+```
