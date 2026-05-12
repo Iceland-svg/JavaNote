@@ -70,3 +70,11 @@ hmeget key f1 f2 f3
 hgetall是获取所有
 
 尽量去使用hmget这种渐进式遍历，而不是hgetall, hvals, hkeys这种一次遍历完的
+
+### hlen命令
+
+获取hash中字段的个数
+
+```
+hlen 
+```
