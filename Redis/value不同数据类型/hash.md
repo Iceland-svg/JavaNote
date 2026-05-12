@@ -19,4 +19,7 @@ hget key1 f1
 "111"
 ```
 
-hexist
+### hexist命令
+
+判断hash中是否有指定字段
+
