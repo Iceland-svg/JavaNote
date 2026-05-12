@@ -31,3 +31,5 @@ hexist key1 f2
 0
 ```
 
+### hdel命令
+
