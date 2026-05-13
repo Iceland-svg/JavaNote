@@ -1,12 +1,13 @@
-lpush
+### lpush
 
-lrange
 
-lpushx
+### lrange
 
-rpush
+### lpushx
 
-rpushx
+### rpush
+
+### rpushx
 
 lpop
 
@@ -17,3 +18,11 @@ lindex
 linsert
 
 llen
+
+lrem
+
+lset
+
+blpop
+
+brpop
