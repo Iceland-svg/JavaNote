@@ -1,7 +1,14 @@
 ### lpush
 
+头插
+
+```
+lpush key 1 2 3 4
+```
 
 ### lrange
+
+取出对应范围
 
 ### lpushx
 
@@ -9,20 +16,20 @@
 
 ### rpushx
 
-lpop
+### lpop
 
-rpop
+### rpop
 
-lindex
+### lindex
 
-linsert
+### linsert
 
-llen
+### llen
 
-lrem
+### lrem
 
-lset
+### lset
 
-blpop
+### blpop
 
-brpop
+### brpop
