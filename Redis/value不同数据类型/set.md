@@ -40,3 +40,21 @@ spop key
 spop key
 "4"
 ```
+### smove命令
+
+移动元素
+
+```
+sadd key2 2
+smove key key2 1
+smember key2 
+"2"
+"1"
+smember key
+"2"
+"3"
+"4"
+```
+
+
+
