@@ -130,6 +130,13 @@ sdiff key3 key4
 "5"
 ```
 
+### sdiffstore命令
+
+求差集并存到key中
+
+```
+sdiffst
+```
 
 
 
