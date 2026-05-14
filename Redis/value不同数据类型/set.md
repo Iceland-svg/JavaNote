@@ -56,5 +56,21 @@ smember key
 "4"
 ```
 
+### srem命令
+
+删除指定元素,返回删除元素个数
+
+```
+srem key 2
+1
+smember key
+"3"
+"4"
+```
+
+
+
+
+
 
 
