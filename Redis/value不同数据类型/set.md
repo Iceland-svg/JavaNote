@@ -95,6 +95,40 @@ smember key
 "4"
 ```
 
+### sunion命令
+
+求并集 
+
+```
+sunion key3 key4
+"1"
+"2"
+"3"
+"4"
+```
+
+### sunionstore命令
+
+存并集结果到key中
+
+```
+sunion key key3 key4
+smember key
+"1"
+"2"
+"3"
+"4"
+```
+
+### sdiff命令
+
+求差集
+
+```
+sadd key3 5
+sdiff key3 key4
+"5"
+```
 
 
 
