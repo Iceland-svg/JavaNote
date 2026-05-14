@@ -68,9 +68,14 @@ smember key
 "4"
 ```
 
+### sinter命令
 
+求两个集合交集
 
-
+```
+sadd key3 1 2 3 4
+sadd key4 1 2 3 4
+```
 
 
 
