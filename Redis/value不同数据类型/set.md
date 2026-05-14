@@ -26,5 +26,7 @@ smembers key
 ```
 sismember key 1
 1
-sismember key 
+sismember key 100
+0
 ```
+
