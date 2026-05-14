@@ -30,3 +30,13 @@ sismember key 100
 0
 ```
 
+### spop命令
+
+随机删除集合中元素
+
+```
+spop key 
+"1"
+spop key
+"4"
+```
