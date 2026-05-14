@@ -19,4 +19,12 @@ smembers key
 "4"
 ```
 
+### sismember命令
 
+判定当前元素是否在集合中
+
+```
+sismember key 1
+1
+sismember key 
+```
