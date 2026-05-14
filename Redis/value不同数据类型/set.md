@@ -75,7 +75,27 @@ smember key
 ```
 sadd key3 1 2 3 4
 sadd key4 1 2 3 4
+sinter key3 key4
+"1"
+"2"
+"3"
+"4"
 ```
+
+### sinterstore命令
+
+求交集并存到另一个集合
+
+```
+sinterstore key key3 key4
+smember key
+"1"
+"2"
+"3"
+"4"
+```
+
+
 
 
 
