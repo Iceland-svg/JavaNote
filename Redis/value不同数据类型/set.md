@@ -135,7 +135,10 @@ sdiff key3 key4
 求差集并存到key中
 
 ```
-sdiffst
+sdiffstore key key3 key4
+1
+smember key
+"5"
 ```
 
 
