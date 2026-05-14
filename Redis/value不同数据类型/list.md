@@ -64,3 +64,4 @@ lpop key
 ### blpop
 
 ### brpop
+### list应用
