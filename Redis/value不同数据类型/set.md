@@ -142,6 +142,13 @@ smember key
 ```
 
 
+---
+
+## set内部编码
+
+intset 为了节省空间做出的特别优化
+
+hashtable 
 
 
 
