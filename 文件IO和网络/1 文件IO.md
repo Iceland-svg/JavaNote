@@ -140,6 +140,18 @@ while (true){
     System.out.printf("0x%x\n",c);  
 }
 
+InputStream inputStream = new FileInputStream("./test.txt");  
+while (true){  
+    byte[] bytes = new byte[1024];  
+    int c = inputStream.read(bytes);//输出型参数  
+    if(c == -1){  
+        break;  
+    }  
+    for (int i = 0; i < c; i++){  
+        System.out.printf("0x%x\n",c);  
+    }  
+}
+
 // 版本1：单字节读取（极慢，不推荐）
 try (FileInputStream fis = new FileInputStream("a.jpg")) {
     int data;
