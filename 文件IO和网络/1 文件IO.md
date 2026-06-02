@@ -49,3 +49,263 @@ Writer
 
 字符流读写
 代码
+根据你的笔记大纲，我为你整理并完善了一份结构清晰、内容详尽的 Java 文件操作笔记。补充了必要的概念解释、代码示例以及常见注意事项，方便你复习和查阅。
+
+---
+
+### 一、File 类：文件与目录的抽象表示
+
+`File` 类位于 `java.io` 包中，可以代表一个文件或目录的路径，但**不涉及文件内容**的读写。
+
+#### 1. 创建文件/目录
+
+| 方法 | 说明 | 返回值 |
+|------|------|--------|
+| `createNewFile()` | 创建新文件（若文件已存在则返回 false） | `boolean` |
+| `mkdir()` | 创建单级目录 | `boolean` |
+| `mkdirs()` | 创建多级目录（包括父目录） | `boolean` |
+
+```java
+File file = new File("D:/test/hello.txt");
+if (!file.exists()) {
+    boolean created = file.createNewFile();  // 创建文件
+    System.out.println(created ? "创建成功" : "创建失败");
+}
+
+File dir = new File("D:/test/a/b/c");
+dir.mkdirs();  // 一次性创建多层目录
+```
+
+#### 2. 重命名或移动文件：`renameTo()`
+
+- **重命名**：同一目录下改名
+- **移动**：改变文件所在的目录路径
+
+```java
+File src = new File("D:/test/old.txt");
+File dest = new File("D:/test/new.txt");
+src.renameTo(dest);   // 重命名
+
+// 移动 + 重命名
+File target = new File("E:/backup/new.txt");
+src.renameTo(target);
+```
+
+> 注意：`renameTo()` 在不同文件系统之间移动时可能失败，推荐使用 `Files.move()`（NIO）。
+
+#### 3. 常用辅助方法
+
+| 方法 | 作用 |
+|------|------|
+| `getName()` | 获取文件名（含扩展名） |
+| `getPath()` / `getAbsolutePath()` | 获取路径 |
+| `isFile()` / `isDirectory()` | 判断是文件还是目录 |
+| `delete()` | 删除文件或空目录 |
+| `exists()` | 判断是否存在 |
+
+---
+
+### 二、文件内容操作（核心：流）
+
+对文件内容的读写必须通过 **I/O 流** 完成。数据在程序和文件之间传输，就像水流一样，因此称为“流”。
+
+#### 流的分类（以 CPU 为基准）
+
+- **输入流（Input）**：数据从 **硬盘 → 内存 → CPU → 程序**（读取文件内容）
+- **输出流（Output）**：数据从 **程序 → CPU → 内存 → 硬盘**（写入文件内容）
+
+| 类型 | 抽象基类 | 适用场景 |
+|------|----------|----------|
+| 字节流 | `InputStream` / `OutputStream` | 二进制文件（图片、视频、压缩包等） |
+| 字符流 | `Reader` / `Writer` | 纯文本文件（.txt, .java, .csv 等） |
+
+---
+
+### 三、字节流读写二进制文件
+
+#### 1. 读文件（三个版本）
+
+```java
+// 版本1：单字节读取（极慢，不推荐）
+try (FileInputStream fis = new FileInputStream("a.jpg")) {
+    int data;
+    while ((data = fis.read()) != -1) {
+        // 处理每个字节...
+    }
+}
+
+// 版本2：字节数组缓冲（推荐）
+try (FileInputStream fis = new FileInputStream("a.jpg")) {
+    byte[] buffer = new byte[1024];
+    int len;
+    while ((len = fis.read(buffer)) != -1) {
+        // len 表示实际读到的字节数
+    }
+}
+
+// 版本3：一次读取全部（适合小文件）
+byte[] allBytes = Files.readAllBytes(Paths.get("a.jpg"));
+```
+
+#### 2. 写文件（含追加模式）
+
+```java
+// 普通写入（覆盖原有内容）
+try (FileOutputStream fos = new FileOutputStream("out.dat")) {
+    fos.write("Hello".getBytes());
+}
+
+// 追加写入（第二个参数 true 表示追加）
+try (FileOutputStream fos = new FileOutputStream("out.dat", true)) {
+    fos.write("追加内容".getBytes());
+}
+```
+
+> 💡 **追加模式**：构造 `FileOutputStream` 时传入 `true`，新内容会写在文件末尾。
+
+---
+
+### 四、关闭文件与资源管理
+
+#### 1. 为什么必须关闭流？
+
+- 操作系统会为每个进程维护一个 **文件描述符表**（表长度有限）
+- 若不关闭流，文件描述符会被耗尽，导致“打开太多文件”的错误
+- 未关闭的输出流可能导致数据滞留缓冲区，内容未真正写入硬盘
+
+```java
+// 危险示范（忘记 close）
+FileInputStream fis = null;
+try {
+    fis = new FileInputStream("data.txt");
+    // 读取...
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    // 如果没有 close，资源泄漏！
+}
+```
+
+#### 2. 正确关闭的方式（三种）
+
+**方式一：手动在 finally 中关闭**  
+```java
+FileInputStream fis = null;
+try {
+    fis = new FileInputStream("data.txt");
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    if (fis != null) {
+        try {
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**方式二：try-with-resources（推荐，Java 7+）**  
+实现了 `AutoCloseable` 接口的资源会自动关闭，代码简洁安全。
+
+```java
+try (FileInputStream fis = new FileInputStream("data.txt")) {
+    // 自动关闭，无需 finally
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
+多个资源可以一起写：
+```java
+try (FileInputStream fis = new FileInputStream("src.dat");
+     FileOutputStream fos = new FileOutputStream("dest.dat")) {
+    // 读写操作
+}
+```
+
+---
+
+### 五、字符流读写文本文件
+
+字符流用于处理 **文本文件**，自动处理字符编码（如 UTF-8, GBK）。
+
+| 字符流类 | 用途 |
+|----------|------|
+| `FileReader` / `FileWriter` | 读写文本文件（使用系统默认编码，不推荐跨平台） |
+| `InputStreamReader` / `OutputStreamWriter` | 可指定编码的字符流（推荐） |
+| `BufferedReader` / `BufferedWriter` | 带缓冲，提供 `readLine()` 方法 |
+
+#### 代码示例（推荐写法）
+
+```java
+// 读文本文件（指定 UTF-8 编码）
+try (BufferedReader reader = new BufferedReader(
+        new InputStreamReader(new FileInputStream("note.txt"), StandardCharsets.UTF_8))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+}
+
+// 写文本文件（指定编码，可追加）
+try (BufferedWriter writer = new BufferedWriter(
+        new OutputStreamWriter(new FileOutputStream("note.txt", true), StandardCharsets.UTF_8))) {
+    writer.write("新增一行文字");
+    writer.newLine();   // 写入换行符
+}
+```
+
+> ⚠️ 注意：  
+> - 直接用 `FileReader` 会使用系统默认编码，在 Windows（GBK）和 Linux（UTF-8）下可能乱码  
+> - 推荐使用 `InputStreamReader` / `OutputStreamWriter` 显式指定编码
+
+---
+
+### 六、补充：文件移动的最佳实践（Java NIO）
+
+虽然 `renameTo()` 可以移动文件，但更强大、更可靠的是 `Files.move()`（JDK 7+）：
+
+```java
+Path source = Paths.get("D:/test/src.txt");
+Path target = Paths.get("E:/backup/dest.txt");
+Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+```
+
+优势：
+- 支持跨文件系统移动
+- 可指定覆盖、原子移动等选项
+
+---
+
+### 附：脑图式的总结
+
+```text
+文件操作
+├── File 类
+│   ├── createNewFile / mkdir / mkdirs
+│   ├── renameTo（重命名/移动）
+│   └── exists, delete, getName...
+├── 流（Stream）
+│   ├── 字节流（二进制）
+│   │   ├── InputStream → FileInputStream
+│   │   └── OutputStream → FileOutputStream
+│   └── 字符流（文本）
+│       ├── Reader → InputStreamReader → FileReader
+│       └── Writer → OutputStreamWriter → FileWriter
+├── 读文件
+│   ├── 单字节（慢）
+│   ├── 字节数组缓冲（快）
+│   └── Files.readAllBytes
+├── 写文件
+│   └── 覆盖 / 追加（构造时传 true）
+├── 关闭资源
+│   ├── 手动 close（finally）
+│   └── try-with-resources（自动关闭）
+└── 文件移动（NIO）: Files.move
+```
+
+---
+
+这份笔记已覆盖你大纲中的所有要点，并补充了编码选择、NIO 替代方案以及资源管理的原理。你可以把它当作复习材料或开发参考。如果有特定部分需要更详细的代码或例子，欢迎告诉我！
