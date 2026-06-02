@@ -119,6 +119,8 @@ src.renameTo(target);
 | 字节流 | `InputStream` / `OutputStream` | 二进制文件（图片、视频、压缩包等） |
 | 字符流 | `Reader` / `Writer` | 纯文本文件（.txt, .java, .csv 等） |
 
+文件就是硬盘，读就是数据从硬盘中出来，写就是数据从外面进入硬盘，输入输出是以内存为基准的
+
 ---
 
 ### 三、字节流读写二进制文件
