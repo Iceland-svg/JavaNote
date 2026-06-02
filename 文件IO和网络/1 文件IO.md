@@ -95,13 +95,13 @@ src.renameTo(target);
 
 #### 3. 常用辅助方法
 
-| 方法 | 作用 |
-|------|------|
-| `getName()` | 获取文件名（含扩展名） |
-| `getPath()` / `getAbsolutePath()` | 获取路径 |
-| `isFile()` / `isDirectory()` | 判断是文件还是目录 |
-| `delete()` | 删除文件或空目录 |
-| `exists()` | 判断是否存在 |
+| 方法                                | 作用          |
+| --------------------------------- | ----------- |
+| `getName()`                       | 获取文件名（含扩展名） |
+| `getPath()` / `getAbsolutePath()` | 获取路径        |
+| `isFile()` / `isDirectory()`      | 判断是文件还是目录   |
+| `delete()`                        | 删除文件或空目录    |
+| `exists()`                        | 判断是否存在      |
 
 ---
 
