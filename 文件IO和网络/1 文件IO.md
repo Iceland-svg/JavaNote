@@ -129,7 +129,15 @@ src.renameTo(target);
 
 ```java
 
-InputStream inputStream = new FileInputStream();
+
+InputStream inputStream = new FileInputStream("./test.txt");  
+while (true){  
+    int c = inputStream.read();  
+    if(c == -1){  
+        break;  
+    }  
+    System.out.printf("0x%x\n",c);  
+}
 
 // 版本1：单字节读取（极慢，不推荐）
 try (FileInputStream fis = new FileInputStream("a.jpg")) {
