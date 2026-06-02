@@ -217,25 +217,43 @@ public static void readFile(){
 }
 ```
 
-*此时如果read出错了回直接跳到catch,文件不会关闭*
-
-**方式二：try-with-resources（推荐，Java 7+）**  
-实现了 `AutoCloseable` 接口的资源会自动关闭，代码简洁安全。
+ **科学写法**
 
 ```java
-try (FileInputStream fis = new FileInputStream("data.txt")) {
-    // 自动关闭，无需 finally
-} catch (IOException e) {
-    e.printStackTrace();
+public static void readFile(){  
+    InputStream inputStream = null;  
+    try {  
+        inputStream = new FileInputStream("./test.txt");  
+  
+        while (true){  
+            byte[] bytes = new byte[1024];  
+            int c = inputStream.read(bytes);//输出型参数  
+            if(c == -1){  
+                break;  
+            }  
+            for (int i = 0; i < c; i++){  
+                System.out.printf("0x%x\n",c);  
+            }  
+        }  
+    } catch (IOException e) {  
+        e.printStackTrace();  
+    }finally {  
+        try {  
+            //保证在read之后再关闭文件  
+            if(inputStream != null){  
+                inputStream.close();  
+            }  
+        }catch (IOException e){  
+            e.printStackTrace();  
+        }  
+    }  
 }
 ```
 
-多个资源可以一起写：
-```java
-try (FileInputStream fis = new FileInputStream("src.dat");
-     FileOutputStream fos = new FileOutputStream("dest.dat")) {
-    // 读写操作
-}
+**try with resourse 简化代码 **
+
+```
+
 ```
 
 ---
