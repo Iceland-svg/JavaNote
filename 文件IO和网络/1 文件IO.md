@@ -128,6 +128,9 @@ src.renameTo(target);
 #### 1. 读文件（三个版本）
 
 ```java
+
+InputStream inputStream = new FileInputStream();
+
 // 版本1：单字节读取（极慢，不推荐）
 try (FileInputStream fis = new FileInputStream("a.jpg")) {
     int data;
