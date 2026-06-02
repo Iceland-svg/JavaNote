@@ -130,7 +130,8 @@ src.renameTo(target);
 ```java
 
 
-InputStream inputStream = new FileInputStream("./test.txt");  
+InputStream inputStream = new FileInputStream("./test.txt"); 
+//InputStream有多个子类，向上转型，可以换成其他子类 
 while (true){  
     int c = inputStream.read();  
     if(c == -1){  
