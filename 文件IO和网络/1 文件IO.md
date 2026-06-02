@@ -325,6 +325,21 @@ public static void readFile(){
 
 #### 代码示例（推荐写法）
 
+```java
+public static void readFileTest(){  
+    try(Reader reader = new FileReader("./test.txet")) {  
+        while (true){  
+            int c = reader.read();  
+            if(c == -1){  
+                break;  
+            }  
+        }  
+    }catch (IOException e){  
+        e.printStackTrace();  
+    }  
+}
+```
+
 
 
 ```java
