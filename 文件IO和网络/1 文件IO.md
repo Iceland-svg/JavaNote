@@ -252,8 +252,28 @@ public static void readFile(){
 
 **try with resourse 简化代码 **
 
-```
-
+```java
+ public static void readFile(){  
+          
+        //try执行结束后自动调用close  
+        try (InputStream inputStream = new FileInputStream("./test.txt")){  
+  
+            while (true){  
+                byte[] bytes = new byte[1024];  
+                int c = inputStream.read(bytes);//输出型参数  
+                if(c == -1){  
+                    break;  
+                }  
+                for (int i = 0; i < c; i++){  
+                    System.out.printf("0x%x\n",c);  
+                }  
+            }  
+              
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+}
 ```
 
 ---
