@@ -125,7 +125,7 @@ src.renameTo(target);
 
 ### 三、字节流读写二进制文件
 
-#### 1. 读文件（三个版本）
+#### 1. 读文件
 
 ```java
 
@@ -152,15 +152,7 @@ while (true){
     }  
 }
 
-// 版本1：单字节读取（极慢，不推荐）
-try (FileInputStream fis = new FileInputStream("a.jpg")) {
-    int data;
-    while ((data = fis.read()) != -1) {
-        // 处理每个字节...
-    }
-}
-
-// 版本2：字节数组缓冲（推荐）
+//其他写法
 try (FileInputStream fis = new FileInputStream("a.jpg")) {
     byte[] buffer = new byte[1024];
     int len;
@@ -169,11 +161,11 @@ try (FileInputStream fis = new FileInputStream("a.jpg")) {
     }
 }
 
-// 版本3：一次读取全部（适合小文件）
+// 一次读取全部（适合小文件）
 byte[] allBytes = Files.readAllBytes(Paths.get("a.jpg"));
 ```
 
-#### 2. 写文件（含追加模式）
+#### 2. 写文件
 
 ```java
 // 普通写入（覆盖原有内容）
@@ -199,38 +191,33 @@ try (FileOutputStream fos = new FileOutputStream("out.dat", true)) {
 - 若不关闭流，文件描述符会被耗尽，导致“打开太多文件”的错误
 - 未关闭的输出流可能导致数据滞留缓冲区，内容未真正写入硬盘
 
+
+#### 2. 正确关闭的方式
+
+**错误关闭**  
+
 ```java
-// 危险示范（忘记 close）
-FileInputStream fis = null;
-try {
-    fis = new FileInputStream("data.txt");
-    // 读取...
-} catch (IOException e) {
-    e.printStackTrace();
-} finally {
-    // 如果没有 close，资源泄漏！
+public static void readFile(){  
+    try {  
+        InputStream inputStream = new FileInputStream("./test.txt");  
+        while (true){  
+            byte[] bytes = new byte[1024];  
+            int c = inputStream.read(bytes);//输出型参数  
+            if(c == -1){  
+                break;  
+            }  
+            for (int i = 0; i < c; i++){  
+                System.out.printf("0x%x\n",c);  
+            }  
+        }  
+        inputStream.close();  
+    } catch (IOException e) {  
+        e.printStackTrace();  
+    }  
 }
 ```
 
-#### 2. 正确关闭的方式（三种）
-
-**方式一：手动在 finally 中关闭**  
-```java
-FileInputStream fis = null;
-try {
-    fis = new FileInputStream("data.txt");
-} catch (IOException e) {
-    e.printStackTrace();
-} finally {
-    if (fis != null) {
-        try {
-            fis.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-```
+*此时如果read出错了回直接跳到catch,文件不会关闭*
 
 **方式二：try-with-resources（推荐，Java 7+）**  
 实现了 `AutoCloseable` 接口的资源会自动关闭，代码简洁安全。
