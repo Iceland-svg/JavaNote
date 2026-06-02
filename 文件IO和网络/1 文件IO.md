@@ -291,6 +291,18 @@ public static void readFile(){
 #### 代码示例（推荐写法）
 
 ```java
+public static void writeFile(){  
+    try (OutputStream outputStream = new FileOutputStream("./tset.txt")){  
+        outputStream.write(97);  
+        outputStream.write(98);  
+        outputStream.write(99);  
+    }catch (IOException e){  
+        e.printStackTrace();  
+    }  
+}
+```
+
+```java
 // 读文本文件（指定 UTF-8 编码）
 try (BufferedReader reader = new BufferedReader(
         new InputStreamReader(new FileInputStream("note.txt"), StandardCharsets.UTF_8))) {
