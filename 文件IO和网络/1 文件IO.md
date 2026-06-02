@@ -325,7 +325,7 @@ public static void readFile(){
 
 #### 代码示例（推荐写法）
 
-一个字符一个字符读
+**一个字符一个字符读**
 
 ```java
 public static void readFileTest(){  
@@ -342,7 +342,7 @@ public static void readFileTest(){
 }
 ```
 
-读满一个字符数组
+**读满一个字符数组**
 
 ```java
 public static void readFileTest(){  
@@ -360,7 +360,17 @@ public static void readFileTest(){
 }
 ```
 
+**写**
 
+```
+public static void writeFileTset(){  
+    try(Writer writer = new FileWriter("./test.txt",true)){  
+        writer.write("hello");  
+    }catch (IOException e){  
+        e.printStackTrace();  
+    }  
+}
+```
 
 ```java
 // 读文本文件（指定 UTF-8 编码）
