@@ -196,18 +196,23 @@ public static void writeFile(){
     }
 ```
 
+**追加写入**
 
 ```java
-// 普通写入（覆盖原有内容）
-try (FileOutputStream fos = new FileOutputStream("out.dat")) {
-    fos.write("Hello".getBytes());
-}
-
-// 追加写入（第二个参数 true 表示追加）
-try (FileOutputStream fos = new FileOutputStream("out.dat", true)) {
-    fos.write("追加内容".getBytes());
-}
+public static void writeFile(){  
+        try (OutputStream outputStream = new FileOutputStream("./tset.txt",true)){  
+//            outputStream.write(97);  
+//            outputStream.write(98);  
+//            outputStream.write(99);  
+            byte[] bytes = {  
+                (byte) 0xe4, (byte) 0xbd, (byte) 0xa0, (byte) 0xe5,  
+            };  
+        }catch (IOException e){  
+            e.printStackTrace();  
+        }  
+    }
 ```
+
 
 > 💡 **追加模式**：构造 `FileOutputStream` 时传入 `true`，新内容会写在文件末尾。
 
