@@ -325,11 +325,31 @@ public static void readFile(){
 
 #### 代码示例（推荐写法）
 
+一个字符一个字符读
+
 ```java
 public static void readFileTest(){  
     try(Reader reader = new FileReader("./test.txet")) {  
         while (true){  
             int c = reader.read();  
+            if(c == -1){  
+                break;  
+            }  
+        }  
+    }catch (IOException e){  
+        e.printStackTrace();  
+    }  
+}
+```
+
+读满一个字符数组
+
+```java
+public static void readFileTest(){  
+    try(Reader reader = new FileReader("./test.txet")) {  
+        while (true){  
+            char[] chars = new char[1024];  
+            int c = reader.read(chars);  
             if(c == -1){  
                 break;  
             }  
