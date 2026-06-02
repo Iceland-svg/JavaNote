@@ -168,6 +168,36 @@ byte[] allBytes = Files.readAllBytes(Paths.get("a.jpg"));
 #### 2. 写文件
 
 ```java
+public static void writeFile(){  
+    try (OutputStream outputStream = new FileOutputStream("./tset.txt")){  
+        outputStream.write(97);  
+        outputStream.write(98);  
+        outputStream.write(99);  
+    }catch (IOException e){  
+        e.printStackTrace();  
+    }  
+}
+```
+
+
+```java
+public static void writeFile(){  
+//每次打开文件之前都会清空文件，所以不会产生覆盖
+        try (OutputStream outputStream = new FileOutputStream("./tset.txt")){  
+//            outputStream.write(97);  
+//            outputStream.write(98);  
+//            outputStream.write(99);  
+            byte[] bytes = {  
+                (byte) 0xe4, (byte) 0xbd, (byte) 0xa0, (byte) 0xe5,  
+            };  
+        }catch (IOException e){  
+            e.printStackTrace();  
+        }  
+    }
+```
+
+
+```java
 // 普通写入（覆盖原有内容）
 try (FileOutputStream fos = new FileOutputStream("out.dat")) {
     fos.write("Hello".getBytes());
@@ -290,17 +320,7 @@ public static void readFile(){
 
 #### 代码示例（推荐写法）
 
-```java
-public static void writeFile(){  
-    try (OutputStream outputStream = new FileOutputStream("./tset.txt")){  
-        outputStream.write(97);  
-        outputStream.write(98);  
-        outputStream.write(99);  
-    }catch (IOException e){  
-        e.printStackTrace();  
-    }  
-}
-```
+
 
 ```java
 // 读文本文件（指定 UTF-8 编码）
