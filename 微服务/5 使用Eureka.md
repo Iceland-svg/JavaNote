@@ -42,6 +42,20 @@ eureka:
 (2) 修改配置
 (3) 修改远程调用代码
 
+```java
+public OrderInfo selcetOrderInfoById(Integer orderId){  
+        OrderInfo orderInfo = orderMapper.SelectOrderById(orderId);  
+//        String url = "http://127.0.0.1:9090/product/"+ orderInfo.getProductId();  
+        List<ServiceInstance> instances = discoveryClient.getInstances("product-service");  
+        String uri = instances.get(0).getUri().toString();  
+        String url = uri + "/product/" + orderInfo.getProductId();  
+        log.info("远程调用url: {}",url);  
+        ProductInfo productInfo = restTemplate.getForObject(url, ProductInfo.class);  
+        orderInfo.setProductInfo(productInfo);  
+        return orderInfo;  
+    }
+```
+
 (4) 启动，测试
 
 ## 如何搭建注册中心
