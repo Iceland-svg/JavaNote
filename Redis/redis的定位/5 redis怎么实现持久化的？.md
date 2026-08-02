@@ -70,6 +70,6 @@ appenfsync(选项)
 
 always：频率最高，立即刷新，新能最低
 
-everysec：每秒刷新
+everysec：每秒刷新，均衡方案
 
-no：
+no：让操作系统自己刷新，频率最低
