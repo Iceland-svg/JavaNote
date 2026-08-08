@@ -101,3 +101,5 @@ no：让操作系统自己刷新，频率最低
 如果在执行berewriteaof时redis在进行rdb快照，则会等待快照完之后进行aof重写
 
 同时也能发现，rdb是不管fork之后的新数据的（定期备份），而aof则对fork之后的数据采取 aof_rewrite_buf的策略来处理
+
+fork完后子进程就开始写aof文件了，
