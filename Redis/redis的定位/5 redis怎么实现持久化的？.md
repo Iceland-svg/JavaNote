@@ -95,3 +95,9 @@ no：让操作系统自己刷新，频率最低
 
 创建时，子进程就继承了父进程的内存状态，子进程中的内存数据是父进程fork之前的数据，也就是说新的请求子进程不知道，也没法重写，所以父进程引入了  **aof_rewrite_buf** 缓冲区放fork之后的请求数据，在子进程写完aof数据的时候，会通知父进程，把  **aof_rewrite_buf** 中的数据也进行写入
 ![](assets/5%20redis怎么实现持久化的？/file-20260808145739004.png)
+
+如果在执行bgrewriteaof时redis已经正在进行aof重写了，则会不会再次aof执行重写，会直接返回
+
+如果在执行berewriteaof时redis在进行rdb快照，则会等待快照完之后进行aof重写
+
+同时也能发现，rdb是不管fork之后的新数据的（定期备份），而aof则对fork之后的数据采取 aof_rewrite_buf的策略来处理
