@@ -49,6 +49,9 @@ redis集群模式部署不支持事务
 ## 执行事务-EXEC
 
 ## 放弃当前事务-DISCARD
+
+类似于服务器重启的效果 redis-server restart
+
 ```
 MULTI
 OK
@@ -61,3 +64,5 @@ EXEC
 (1)OK
 (2)OK
 ```
+
+## watch
