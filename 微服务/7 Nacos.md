@@ -60,4 +60,6 @@ cloud:
 
 ![](assets/7%20Nacos/file-20260828205023738.png)
 
+版本选择
 
+![](assets/7%20Nacos/file-20260828205622466.png)
