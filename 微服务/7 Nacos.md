@@ -79,3 +79,5 @@ nacos权重需要在配置中开启
 ![](assets/7%20Nacos/file-20260828210527351.png)
 
 这里是order服务远程调用product所以需要给order（调用方）配置权重
+
+局域网修改权重时可能会报错 解决方法--->删除 nacos/data/protocol文件再重启
