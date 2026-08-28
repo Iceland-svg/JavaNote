@@ -43,6 +43,13 @@ cloud:
     discovery:
       server-addr:
 ```
+
+![](assets/7%20Nacos/file-20260828151709916.png)
+
+服务名称
+
+![](assets/7%20Nacos/file-20260828151722438.png)
+
 远程调用
 
 测试
