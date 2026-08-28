@@ -37,7 +37,12 @@
 ```
 
 修改配置
-
+```
+cloud:
+  nacos:
+    discovery:
+      server-addr:
+```
 远程调用
 
 测试
