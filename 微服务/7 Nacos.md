@@ -74,4 +74,5 @@ cloud:
 
 ![](assets/7%20Nacos/file-20260828210155672.png)
 
-权重不生效可能
+nacos权重需要在配置中开启
+![](assets/7%20Nacos/file-20260828210527351.png)
