@@ -13,7 +13,7 @@
 
 ## nacos使用
 
-引入 spring cloud alibaba 依赖
+引入 spring cloud alibaba 依赖放入父项目
 
 ```
 <properties>
@@ -28,7 +28,7 @@
 </dependency>
 ```
 
-引入 nacos 依赖
+引入 nacos 依赖放入子项目
 
 ```
 <dependency> <groupId>com.alibaba.cloud</groupId>
