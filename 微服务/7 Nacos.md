@@ -17,27 +17,24 @@
 
 ```
 <properties>
-
 <spring-cloud-alibaba.version>2022.0.0.0-RC2</spring-cloud-alibaba.version>
-
 </properties>
-
 <dependency>
-
 <groupId>com.alibaba.cloud</groupId>
-
 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-
 <version>${spring-cloud-alibaba.version}</version>
-
 <type>pom</type>
-
 <scope>import</scope>
-
 </dependency>
 ```
 
 引入 nacos 依赖
+
+```
+<dependency> <groupId>com.alibaba.cloud</groupId>
+<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+</dependency>
+```
 
 修改配置
 
