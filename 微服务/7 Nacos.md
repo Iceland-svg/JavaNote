@@ -130,7 +130,34 @@ nacos权重需要在配置中开启
 
 ![](assets/7%20Nacos/file-20260831113414954.png)
 
-配置
+product-service 配置 bootstrap.yml
+
+![](assets/7%20Nacos/file-20260901090630542.png)
+
+application-pro.yml
+
+![](assets/7%20Nacos/file-20260901090733612.png)
+
+order-service配置 application.yml
+
+![](assets/7%20Nacos/file-20260901090840886.png)
+
+application-dev.yml
+
+![](assets/7%20Nacos/file-20260901090911081.png)
+
+配置中心写法
+
+![](assets/7%20Nacos/file-20260901090958183.png)
+
+### linux部署
+
+1 打包
+2 上传jar包到指定目录
+3 删除占用端口 ps -ef | grep java
+4 mkdir logs
+5 nohup java -jar product-service-1.0-SNAPSHOT.jar --server.port=9091 >logs/product-9091.log &
+
 
 ![](assets/7%20Nacos/file-20260901090600834.png)
 
