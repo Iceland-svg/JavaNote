@@ -11,6 +11,17 @@
 ```
 
 2.开启feign
+
+```java
+@EnableFeignClients  
+@SpringBootApplication  
+public class OrderServiceApplication {  
+    public static void main(String[] args) {  
+        SpringApplication.run(OrderServiceApplication.class,args);  
+    }  
+}
+```
+
 3.编写客户端
 
 ```java
