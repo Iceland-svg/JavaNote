@@ -162,3 +162,5 @@ application-dev.yml
 ![](assets/7%20Nacos/file-20260901090600834.png)
 
 
+naocs基于推送模式服务列表有变化会实时推送给订阅者
+eureka基于拉模式
