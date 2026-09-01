@@ -163,4 +163,4 @@ application-dev.yml
 
 
 naocs基于推送模式服务列表有变化会实时推送给订阅者
-eureka基于拉模式
+eureka基于拉模式eureka cli会定期从server拉取服务信息
