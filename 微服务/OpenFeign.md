@@ -3,6 +3,13 @@
 
 1.引入依赖
 
+```
+<dependency>  
+    <groupId>org.springframework.cloud</groupId>  
+    <artifactId>spring-cloud-starter-openfeign</artifactId>  
+</dependency>
+```
+
 2.开启feign
 
 3.编写客户端
