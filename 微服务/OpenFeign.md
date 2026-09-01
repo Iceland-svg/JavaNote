@@ -36,3 +36,5 @@ public interface ProductApi {
 4.远程调用
 5.测试
 
+参数chuan
+
