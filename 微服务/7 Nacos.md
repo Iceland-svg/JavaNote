@@ -121,7 +121,7 @@ nacos权重需要在配置中开启
 
 ![](assets/7%20Nacos/file-20260831111927167.png)
 
-![](assets/7%20Nacos/file-20260831112121008.png)
+
 
 ### 配置中心
 
@@ -132,4 +132,6 @@ nacos权重需要在配置中开启
 
 配置
 
-![](assets/7%20Nacos/file-20260831201200992.png)
+![](assets/7%20Nacos/file-20260901090600834.png)
+
+
