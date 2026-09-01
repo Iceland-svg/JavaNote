@@ -11,7 +11,6 @@
 ```
 
 2.开启feign
-
 3.编写客户端
 
 ```java
@@ -25,3 +24,4 @@ public interface ProductApi {
 
 4.远程调用
 5.测试
+
