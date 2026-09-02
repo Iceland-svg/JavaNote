@@ -184,3 +184,29 @@ public String o3(ProductInfo productInfo){
 
 JSON
 
+ProductController
+
+```java
+//JSON参数  
+@GetMapping("/p4")  
+public String p4(@RequestBody ProductInfo productInfo){  
+    return "product-service 接收到参数, productInfo:"+productInfo.toString();  
+}
+```
+
+ProductApi
+
+```java
+@GetMapping("p4")  
+String p4(@RequestBody ProductInfo productInfo);
+```
+
+FeignController
+
+```java
+@RequestMapping("/o4")  
+public String o4(@RequestBody ProductInfo productInfo){  
+    return productApi.p4(productInfo);  
+}  
+
+```
