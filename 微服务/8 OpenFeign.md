@@ -215,3 +215,10 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 
 ![](assets/8%20OpenFeign/file-20260902145534932.png)
+
+
+![](assets/8%20OpenFeign/file-20260902145819702.png)
+
+
+
+![](assets/8%20OpenFeign/file-20260902145847610.png)
