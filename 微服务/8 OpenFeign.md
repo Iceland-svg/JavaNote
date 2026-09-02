@@ -87,7 +87,7 @@ public class FeignController {
 
 5.测试
 
-本地测试需要关闭云服务器上服务
+本地测试需要关闭云服务器上其他服务
 
 ![](assets/8%20OpenFeign/file-20260902112504371.png)
 
@@ -208,5 +208,7 @@ FeignController
 public String o4(@RequestBody ProductInfo productInfo){  
     return productApi.p4(productInfo);  
 }  
-
 ```
+
+### 最佳实践
+
