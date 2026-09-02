@@ -30,3 +30,7 @@ URL（唯一资源定位符）
 ip，端口，路径，查询字符串
 URL需要 URL encode（转义）防止value部分和特殊符号冲突
 http方法
+
+### HTTPS 
+
+HTTPS是在HTTP的基础上引入一层SSL加密（加密层）
