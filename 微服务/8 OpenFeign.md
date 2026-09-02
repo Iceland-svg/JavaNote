@@ -222,3 +222,6 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 
 ![](assets/8%20OpenFeign/file-20260902145847610.png)
+
+
+![](assets/8%20OpenFeign/file-20260902150056662.png)
