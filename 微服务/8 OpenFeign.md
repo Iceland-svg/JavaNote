@@ -93,8 +93,94 @@ public class FeignController {
 
 ## 参数传递
 
+远程调用顺序 FeignController->ProductApi->ProductController
+
 单个参数
+
+ProductController
+
+```java
+//单个参数  
+@RequestMapping("/p1")  
+public String p1(Integer id){  
+    return "product-service 接收到参数, id:"+id;  
+}
+```
+
+ProductApi
+
+```java
+//单个参数  
+@GetMapping("/p1")  
+String p1(@RequestParam("id") Integer id);
+```
+
+FeignController
+
+```java
+@RequestMapping("/o1")  
+public String o1(Integer id){  
+    return productApi.p1(id);  
+}
+```
+
 多个参数
+
+ProductController
+
+```java
+//多个参数  
+@GetMapping("/p2")  
+public String p2(Integer id,String name){  
+    return "product-service 接收到参数, id:"+id+"product-service 接收到参数, name"+name;  
+}
+```
+
+ProductApi
+
+```java
+//多个参数  
+@GetMapping("/p2")  
+String p2(@RequestParam("id") Integer id,@RequestParam("name") String name);
+```
+
+FeignController
+
+```java
+@RequestMapping("/o2")  
+public String o2(Integer id,String name){  
+    return productApi.p2(id,name);  
+}
+```
+
 对象
+
+ProductController
+
+```java
+//参数是对象  
+@GetMapping("/p3")  
+public String p3(ProductInfo productInfo){  
+    return "product-service 接收到参数, productInfo:"+productInfo.toString();  
+}
+```
+
+ProductApi
+
+```java
+//参数是对象  
+@GetMapping("/p3")  
+String p3(@SpringQueryMap ProductInfo productInfo);
+```
+
+FeignController
+
+```java
+@RequestMapping("/o3")  
+public String o3(ProductInfo productInfo){  
+    return productApi.p3(productInfo);  
+}
+```
+
 JSON
 
