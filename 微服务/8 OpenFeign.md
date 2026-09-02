@@ -212,3 +212,6 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 ### 最佳实践
 
+
+
+![](assets/8%20OpenFeign/file-20260902145534932.png)
