@@ -348,3 +348,11 @@ spring:
     <systemPath>C:\Users\24103\.m2\repository\org\example\product-api\1.0-SNAPSHOT\product-api-1.0-SNAPSHOT.jar</systemPath>  
 </dependency>
 ```
+
+```
+<plugin>  
+    <groupId>org.springframework.boot</groupId>  
+    <artifactId>spring-boot-maven-plugin</artifactId>  
+    <configuration>        <includeSystemScope>true</includeSystemScope>  
+    </configuration></plugin>
+```
