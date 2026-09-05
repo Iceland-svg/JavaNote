@@ -333,3 +333,6 @@ spring:
     password: 1234567  
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
+
+
+![](assets/8%20OpenFeign/file-20260905170519985.png)
