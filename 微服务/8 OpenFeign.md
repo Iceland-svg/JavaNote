@@ -355,6 +355,8 @@ spring:
 <plugin>  
     <groupId>org.springframework.boot</groupId>  
     <artifactId>spring-boot-maven-plugin</artifactId>  
-    <configuration>        <includeSystemScope>true</includeSystemScope>  
-    </configuration></plugin>
+    <configuration>
+            <includeSystemScope>true</includeSystemScope>  
+    </configuration>
+    </plugin>
 ```
