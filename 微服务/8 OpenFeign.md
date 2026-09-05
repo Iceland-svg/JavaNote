@@ -360,3 +360,7 @@ spring:
     </configuration>
     </plugin>
 ```
+
+父项目没被install也需要install
+
+![](assets/8%20OpenFeign/file-20260905205512026.png)
