@@ -241,3 +241,95 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 
 确认配置
+
+prodcut-service
+
+bootstrap.yml
+
+```
+spring:  
+  application:  
+    name: product-service  
+  profiles:  
+    active: @profile.name@  
+#管加载本地那个配置文件  
+  cloud:  
+    nacos:  
+      config:  
+        server-addr: 120.77.216.183:8848  
+#       namespace: d0bb0eeb-0678-404b-9b5f-1025840bedf5  
+#命名空间决定会读取配置中心那个环境--public/dev
+```
+
+application-prod.yml
+
+```
+server:  
+  port: 9090  
+spring:  
+  application:  
+    name: product-service  
+  datasource:  
+    url: jdbc:mysql://127.0.0.1:3306/cloud_product?characterEncoding=utf8&useSSL=false  
+    username: root  
+    password: 1234567  
+    driver-class-name: com.mysql.cj.jdbc.Driver  
+  cloud:  
+    nacos:  
+      discovery:  
+        server-addr: 120.77.216.183:8848  
+        cluster-name: BJ  
+#        ephemeral: false  
+    loadbalancer:  
+      nacos:  
+        enabled: true  
+mybatis:  
+  configuration: # 配置打印 MyBatis⽇志  
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  
+    map-underscore-to-camel-case: true #配置驼峰⾃动转换
+```
+
+order-service
+
+application.yml
+
+```
+spring:  
+  application:  
+    name: order-service  
+  profiles:  
+    active: @profile.name@  
+  cloud:  
+    nacos:  
+      discovery:  
+        server-addr: 120.77.216.183:8848  
+#        namespace: d0bb0eeb-0678-404b-9b5f-1025840bedf5  
+    loadbalancer:  
+          nacos:  
+            enabled: true  
+    openfeign:  
+      client:  
+        config:  
+          default:  
+            connectTimeout: 2000 # 连接超时(ms)  
+            readTimeout: 5000 # 读取超时(ms)  
+            loggerLevel: basic # 打印请求方法、URL、响应状态码  
+mybatis:  
+  configuration: # 配置打印 MyBatis⽇志  
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  
+    map-underscore-to-camel-case: true #配置驼峰⾃动转换  
+logging:  
+  level:  
+    org.example.order.api: debug # Feign 接口所在包设为 debug，loggerLevel 才会输出
+```
+
+application-prod.yml
+
+```
+spring:  
+  datasource:  
+    url: jdbc:mysql://127.0.0.1:3306/cloud_order?characterEncoding=utf8&useSSL=false  
+    username: root  
+    password: 1234567  
+    driver-class-name: com.mysql.cj.jdbc.Driver
+```
