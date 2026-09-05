@@ -227,3 +227,8 @@ public String o4(@RequestBody ProductInfo productInfo){
 ![](assets/8%20OpenFeign/file-20260902150056662.png)
 
 ### （2）抽取
+
+抽取
+![](assets/8%20OpenFeign/file-20260905162650065.png)
+
+打包
