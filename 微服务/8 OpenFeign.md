@@ -336,3 +336,15 @@ spring:
 
 
 ![](assets/8%20OpenFeign/file-20260905170519985.png)
+
+修改order-service pom文件
+
+```
+<dependency>  
+    <groupId>org.example</groupId>  
+    <artifactId>product-api</artifactId>  
+    <version>1.0-SNAPSHOT</version>  
+    <scope>system</scope>  
+    <systemPath>C:\Users\24103\.m2\repository\org\example\product-api\1.0-SNAPSHOT\product-api-1.0-SNAPSHOT.jar</systemPath>  
+</dependency>
+```
