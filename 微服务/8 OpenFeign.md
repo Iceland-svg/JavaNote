@@ -231,4 +231,4 @@ public String o4(@RequestBody ProductInfo productInfo){
 抽取
 ![](assets/8%20OpenFeign/file-20260905162650065.png)
 
-打包
+打包![](assets/8%20OpenFeign/file-20260902145819702.png)
