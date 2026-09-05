@@ -232,3 +232,7 @@ public String o4(@RequestBody ProductInfo productInfo){
 ![](assets/8%20OpenFeign/file-20260905162650065.png)
 
 打包![](assets/8%20OpenFeign/file-20260902145819702.png)
+
+服务调用方引入客户端
+
+![](assets/8%20OpenFeign/file-20260905163410191.png)
