@@ -212,7 +212,7 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 ### 最佳实践
 
-
+### （1）继承
 
 ![](assets/8%20OpenFeign/file-20260902145534932.png)
 
@@ -225,3 +225,5 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 
 ![](assets/8%20OpenFeign/file-20260902150056662.png)
+
+### （2）抽取
