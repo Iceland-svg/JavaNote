@@ -310,3 +310,7 @@ services:
       mynet:
         ipv4_address: 172.30.0.111
 ```
+
+启动
+
+![](assets/9%20Redis集群/file-20260907103820592.png)
