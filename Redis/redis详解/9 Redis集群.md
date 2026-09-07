@@ -102,3 +102,44 @@ Redis Cluster将数据空间固定划分为 **16384个槽位（Slot）**。每�
 创建目录和生成文件，删除其他运行节点
 
 ![](assets/9%20Redis集群/file-20260907084734697.png)
+
+编辑shell脚本批量创建
+
+![](assets/9%20Redis集群/file-20260907093611385.png)
+
+```
+for port in $(seq 1 9); \
+do \
+mkdir -p redis${port}/
+touch redis${port}/redis.conf5 cat << EOF > redis${port}/redis.conf
+port 6379
+bind 0.0.0.0
+protected-mode no
+appendonly yes
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+cluster-announce-ip 172.30.0.10${port}
+cluster-announce-port 6379
+cluster-announce-bus-port 16379
+EOF
+done
+# 注意 cluster-announce-ip 的值有变化.
+for port in $(seq 10 11); \
+do \
+mkdir -p redis${port}/
+touch redis${port}/redis.conf
+cat << EOF > redis${port}/redis.conf
+port 6379
+bind 0.0.0.0
+protected-mode no
+appendonly yes
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+cluster-announce-ip 172.30.0.1${port}
+cluster-announce-port 6379
+cluster-announce-bus-port 16379
+EOF
+done
+```
