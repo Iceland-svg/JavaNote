@@ -315,6 +315,6 @@ services:
 
 ![](assets/9%20Redis集群/file-20260907103820592.png)
 
-配置节点
+执行构建集群
 
 ![](assets/9%20Redis集群/file-20260907104648275.png)
