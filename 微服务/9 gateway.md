@@ -56,3 +56,5 @@ spring:
           predicates:  
             - Path=/product/**
 ```
+
+predicatefactory
