@@ -151,3 +151,8 @@ predicates:
  
 ### getawayfilter
 
+
+限流算法
+
+
+固定窗口
