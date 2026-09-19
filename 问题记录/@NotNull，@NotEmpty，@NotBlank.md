@@ -1,4 +1,4 @@
-
+ 
 这三个注解都来自 **Jakarta Bean Validation**（原 javax.validation）及 **Hibernate Validator**，用于数据校验。它们都**不允许为 null**，但对“空”的定义和适用数据类型截然不同。
 
 为了让你一眼看懂，先看核心对比表：
