@@ -228,7 +228,7 @@ eureka基于拉模式eureka cli会定期从server拉取服务信息
 
 配置白名单
 
-![](assets/7%20Nacos/file-20260919110646834.png)
+![](assets/7%20Nacos/file-20260919111235659.png)
 
 引入依赖
 
