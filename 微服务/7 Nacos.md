@@ -223,3 +223,5 @@ eureka基于拉模式eureka cli会定期从server拉取服务信息
 ![](assets/7%20Nacos/file-20260919101029522.png)
 
 ![](assets/7%20Nacos/file-20260919103235789.png)
+
+![](assets/7%20Nacos/file-20260919103550675.png)
