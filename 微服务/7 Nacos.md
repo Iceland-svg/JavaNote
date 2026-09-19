@@ -211,5 +211,10 @@ application-dev.yml
 naocs基于推送模式服务列表有变化会实时推送给订阅者
 eureka基于拉模式eureka cli会定期从server拉取服务信息
 
-配置m'y's
+配置mysql数据源
 
+修改配置文件
+
+![](assets/7%20Nacos/file-20260919100029055.png)
+
+![](assets/7%20Nacos/file-20260919100002158.png)
