@@ -242,3 +242,17 @@ eureka基于拉模式eureka cli会定期从server拉取服务信息
     <artifactId>spring-cloud-starter-bootstrap</artifactId>  
 </dependency>
 ```
+
+创建bootstrap,配置
+
+```
+spring:  
+  application:  
+    name: gateway-service  
+  cloud:  
+    nacos:  
+      config:  
+        server-addr: 120.77.216.183:8848  
+        file-extension: yaml
+```
+
