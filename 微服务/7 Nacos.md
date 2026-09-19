@@ -229,3 +229,16 @@ eureka基于拉模式eureka cli会定期从server拉取服务信息
 配置白名单
 
 ![](assets/7%20Nacos/file-20260919110646834.png)
+
+引入依赖
+
+```
+<dependency>  
+    <groupId>com.alibaba.cloud</groupId>  
+    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>  
+</dependency>  
+<dependency>  
+    <groupId>org.springframework.cloud</groupId>  
+    <artifactId>spring-cloud-starter-bootstrap</artifactId>  
+</dependency>
+```
