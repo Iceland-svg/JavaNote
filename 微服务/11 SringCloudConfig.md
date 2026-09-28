@@ -1,4 +1,4 @@
-配置服务器
+### 配置服务器
 
 搭建ConfigServer
 
@@ -6,9 +6,10 @@
 添加依赖
 启用ConfigServer
 完善配置
-初始化gitcang
-配置客户端
+初始化git仓库
 
-版本控制集成
+### 配置客户端
+
+### 版本控制集成
 
 ![](assets/11%20SringCloudConfig/file-20260928153916190.png)
