@@ -49,10 +49,25 @@ public class ConfigServerApplication {
 
 配置管理
 
+
 ![](assets/11%20SringCloudConfig/file-20260928164337331.png)
+
+添加依赖
+
+```
+<dependency>  
+    <groupId>org.springframework.cloud</groupId>  
+    <artifactId>spring-cloud-starter-config</artifactId>  
+</dependency>  
+<dependency>  
+    <groupId>org.springframework.cloud</groupId>  
+    <artifactId>spring-cloud-starter-bootstrap</artifactId>  
+</dependency>
+```
+
 ### 3 版本控制集成
 
-![](assets/11%20SringCloudConfig/file-20260928164347806.png)
+
 
 
 
