@@ -36,6 +36,8 @@ public class ConfigServerApplication {
 }
 ```
 
+修改了配置中心，ConfigServer需要重启
+
 完善配置
 
 ![](assets/11%20SringCloudConfig/file-20260928162157117.png)
