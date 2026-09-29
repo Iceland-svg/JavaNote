@@ -104,6 +104,8 @@ public class ConfigController {
 ### 3 版本控制集成
 
 
+配置中心自动刷新
+
 
 
 
