@@ -65,6 +65,36 @@ public class ConfigServerApplication {
 </dependency>
 ```
 
+bootstrap.yml
+
+```
+spring:  
+  profiles:  
+    active: dev  
+  application:  
+    name: product-service  
+  cloud:  
+    config:  
+      uri: http://127.0.0.1:9091 # 指定配置服务端的地址  
+# profile: dev
+```
+
+ConfigController
+
+```java
+
+@RestController  
+@RequestMapping("/config")  
+public class ConfigController {  
+    @Value("${data.env}")  
+    private String env;  
+  
+    @RequestMapping("/getEnv")  
+    public String getEnv() {  
+        return "data.env" + env;  
+    }  
+}
+```
 
 汇总
 
