@@ -65,6 +65,10 @@ public class ConfigServerApplication {
 </dependency>
 ```
 
+
+汇总
+
+![](assets/11%20SringCloudConfig/file-20260929102616339.png)
 ### 3 版本控制集成
 
 
