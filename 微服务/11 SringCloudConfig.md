@@ -104,8 +104,13 @@ public class ConfigController {
 ### 3 版本控制集成
 
 
-配置中心自动刷新
+配置中心自动刷新（运行时刷新配置）
 
-
+```
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
 
 
