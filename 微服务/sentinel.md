@@ -11,3 +11,4 @@
 </dependency>
 ```
 
+SpringCloud集成Sentinel
