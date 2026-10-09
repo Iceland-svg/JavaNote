@@ -43,3 +43,10 @@ sentinel:
 
 
 流控规则
+
+QPS : 每秒请求数
+
+并发线程数： 
+
+![](assets/12%20sentinel/file-20261009115048663.png)
+
