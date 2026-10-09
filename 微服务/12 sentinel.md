@@ -24,6 +24,18 @@ SpringCloud集成Sentinel
 
 配置控制台
 
+```
+sentinel:  
+  transport:  
+    dashboard: 127.0.0.1:8100   #sentinel控制台地址  
+  web-context-unify: false   #关闭context整合
+```
+
+设置限流
+
+![](assets/12%20sentinel/file-20261009113224457.png)
+
+压力测试
 
 ![](assets/12%20sentinel/file-20261009113210381.png)
 
