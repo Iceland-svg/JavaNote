@@ -42,3 +42,4 @@ sentinel:
 ![](assets/12%20sentinel/file-20261009113210381.png)
 
 
+流控规则
