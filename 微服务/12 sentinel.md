@@ -50,3 +50,4 @@ QPS : 每秒请求数
 
 ![](assets/12%20sentinel/file-20261009115048663.png)
 
+Warm up（冷启动）
