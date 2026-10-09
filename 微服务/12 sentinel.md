@@ -37,6 +37,8 @@ sentinel:
 
 压力测试
 
+![](assets/12%20sentinel/file-20261009113618928.png)
+
 ![](assets/12%20sentinel/file-20261009113210381.png)
 
 
