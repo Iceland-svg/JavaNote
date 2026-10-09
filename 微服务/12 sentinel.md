@@ -25,3 +25,6 @@ SpringCloud集成Sentinel
 配置控制台
 
 
+![](assets/12%20sentinel/file-20261009113210381.png)
+
+
