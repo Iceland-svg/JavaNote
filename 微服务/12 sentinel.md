@@ -55,3 +55,7 @@ Warm up（冷启动）
 ![](assets/12%20sentinel/file-20261009163240667.png)
 
 5秒后增长到QPS = 10
+
+排队等待
+
+![](assets/12%20sentinel/file-20261010104326910.png)
