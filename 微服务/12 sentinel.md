@@ -61,3 +61,7 @@ Warm up（冷启动）
 ![](assets/12%20sentinel/file-20261010104326910.png)
 
 超过QPS会等待一个一个排队请求
+
+关联
+
+![](assets/12%20sentinel/file-20261011085708014.png)
