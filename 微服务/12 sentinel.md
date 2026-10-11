@@ -65,3 +65,6 @@ Warm up（冷启动）
 关联
 
 ![](assets/12%20sentinel/file-20261011085708014.png)
+
+
+当write资源请求QPS大于5，对read进行限流
