@@ -107,3 +107,16 @@ resource manager
 
 ### TCC事务
 
+#### Try:
+
+尝试执行业务操作，并预留必要资源，不真正执行事务，只是进行资源的预占
+
+#### Confirm: 
+
+try阶段成功进入confirm阶段，使用之前预留资源
+
+
+#### Cancel:
+
+try阶段失败进入cancel阶段，参与者回滚try阶段执行的操作
+
