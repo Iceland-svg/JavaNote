@@ -122,4 +122,5 @@ try阶段失败进入cancel阶段，参与者回滚try阶段执行的操作
 
 ![](assets/13%20Seata/file-20261016114949212.png)
 
-Seata
+### Seata部署
+
