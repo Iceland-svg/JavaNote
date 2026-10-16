@@ -67,3 +67,4 @@ resource manager
 
 #### 两阶段提交：
 
+![](assets/13%20Seata/file-20261016110003712.png)
