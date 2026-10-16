@@ -58,3 +58,7 @@ application
 #### RM: 
 
 resource manager
+
+#### TM：
+
+事务管理器，管理子事务，可以理解为管理RM
