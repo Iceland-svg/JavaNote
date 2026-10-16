@@ -64,3 +64,6 @@ resource manager
 事务管理器，管理子事务，可以理解为管理RM
 
 ![](assets/13%20Seata/file-20261016105242291.png)
+
+#### 两阶段提交：
+
