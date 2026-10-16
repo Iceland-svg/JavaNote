@@ -84,5 +84,5 @@ resource manager
 
 ### 三阶段提交
 
-
+![](assets/13%20Seata/file-20261016112050754.png)
 
