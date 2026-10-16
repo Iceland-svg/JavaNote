@@ -44,3 +44,15 @@ BASE理论
 
 
 #### 分布式事务模型
+
+X/OPEN DTP模型
+
+![](assets/13%20Seata/file-20261016104151137.png)
+
+#### AP: 
+
+application
+
+#### RM: 
+
+resource manager
