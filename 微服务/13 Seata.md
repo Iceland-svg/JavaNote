@@ -124,3 +124,8 @@ try阶段失败进入cancel阶段，参与者回滚try阶段执行的操作
 
 ### Seata部署
 
+下载seata
+
+修改application.yml
+
+
