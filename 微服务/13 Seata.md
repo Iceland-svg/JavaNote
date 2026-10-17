@@ -128,4 +128,86 @@ try阶段失败进入cancel阶段，参与者回滚try阶段执行的操作
 
 修改application.yml
 
+config
 
+```
+seata:
+  config:
+    # support: nacos, consul, apollo, zk, etcd3
+    type: nacos
+    nacos:
+      server-addr: 120.77.216.183:8848
+      namespace:
+      group: SEATA_GROUP
+      context-path:
+      ##1.The following configuration is for the open source version of Nacos
+      username:
+      password:
+      ##2.The following configuration is for the MSE Nacos on aliyun
+      #access-key:
+      #secret-key:
+      ##3.The following configuration is used to deploy on Aliyun ECS or ACK without authentication
+      #ram-role-name:
+      data-id: seataServer.properties
+```
+
+
+register
+
+```
+registry:
+    # support: nacos, eureka, redis, zk, consul, etcd3, sofa
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 120.77.216.183:8848
+      group: SEATA_GROUP
+      namespace:
+      cluster: default
+      context-path:
+      ##1.The following configuration is for the open source version of Nacos
+      username:
+      password:
+      ##2.The following configuration is for the MSE Nacos on aliyun
+      #access-key:
+      #secret-key:
+      ##3.The following configuration is used to deploy on Aliyun ECS or ACK without authentication
+      #ram-role-name:
+```
+
+
+store
+
+```
+store:
+    # support: file 、 db 、 redis 、 raft
+    mode: db
+    db:
+      datasource: druid
+      db-type: mysql
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/seata?rewriteBatchedStatements=true
+      user: root
+      password: 123456
+      min-conn: 10
+      max-conn: 100
+      global-table: global_table
+      branch-table: branch_table
+      lock-table: lock_table
+      distributed-lock-table: distributed_lock
+      vgroup-table: vgroup_table
+      query-limit: 1000
+      max-wait: 5000
+```
+
+双击seata-server.bat启动
+
+![](assets/13%20Seata/file-20261017105620375.png)
+
+访问界面
+
+![](assets/13%20Seata/file-20261017105646374.png)
+
+登录
+
+![](assets/13%20Seata/file-20261017105732321.png)
