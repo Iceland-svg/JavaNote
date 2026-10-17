@@ -211,3 +211,9 @@ store:
 登录
 
 ![](assets/13%20Seata/file-20261017105732321.png)
+
+linux部署
+
+省略修改配置文件
+
+![](assets/13%20Seata/file-20261017113825596.png)
