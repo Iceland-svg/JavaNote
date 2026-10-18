@@ -217,3 +217,7 @@ linux部署
 省略修改配置文件
 
 ![](assets/13%20Seata/file-20261017113825596.png)
+
+启动
+
+![](assets/13%20Seata/file-20261017114525115.png)
