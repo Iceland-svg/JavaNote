@@ -273,3 +273,7 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 ![](assets/13%20Seata/file-20261019140900899.png)
 
 ![](assets/13%20Seata/file-20261019142454611.png)
+
+幂等控制
+
+无论是数据包重传还是异常事务的补偿执行都会导致TCC服务的Try,confrimCancel操作被重复执行，实现TCC服务时需要保证幂等性try,confrim,cancel多次执行业务结果一致
