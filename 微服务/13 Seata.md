@@ -271,3 +271,5 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 
 ### TCC
 ![](assets/13%20Seata/file-20261019140900899.png)
+
+![](assets/13%20Seata/file-20261019142454611.png)
