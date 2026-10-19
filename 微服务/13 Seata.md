@@ -221,3 +221,9 @@ linux部署
 启动
 
 ![](assets/13%20Seata/file-20261017114525115.png)
+
+未指定端口会导致nacos服务以内网ip注册
+
+```
+bash seata-server.sh -h 120.77.216.183 -p 8091
+```
