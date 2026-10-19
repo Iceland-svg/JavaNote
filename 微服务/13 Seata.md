@@ -242,3 +242,5 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 
 修改配置文件
 
+![](assets/13%20Seata/file-20261019084407189.png) 
+
