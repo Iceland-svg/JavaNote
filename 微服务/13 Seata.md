@@ -246,3 +246,5 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 ### XA模式
 
 ![](assets/13%20Seata/file-20261019085511493.png)
+
+![](assets/13%20Seata/file-20261019090001433.png)
