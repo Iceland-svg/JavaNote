@@ -229,9 +229,16 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 ```
 
 
-### 微服务继承seata
+### 微服务集成seata
 
 引入依赖
+
+```
+<dependency>  
+    <groupId>com.alibaba.cloud</groupId>  
+    <artifactId>spring-cloud-starter-alibaba-seata</artifactId>  
+</dependency>
+```
 
 修改配置文件
 
