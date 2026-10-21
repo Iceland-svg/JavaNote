@@ -18,3 +18,30 @@
 ### 为什么选择SkyWalking?
 
 
+
+部署
+
+修改配置
+
+端口号
+
+![](assets/14%20SkyWalking/file-20261021093005064.png)
+
+![](assets/14%20SkyWalking/file-20261021093051511.png)
+
+![](assets/14%20SkyWalking/file-20261021093110622.png)
+
+
+改存储方式为mysql
+
+![](assets/14%20SkyWalking/file-20261021093151949.png)
+
+修改mysql配置
+
+![](assets/14%20SkyWalking/file-20261021093221136.png)
+
+![](assets/14%20SkyWalking/file-20261021092852942.png)
+
+![](assets/14%20SkyWalking/file-20261021092919095.png)
+
+![](assets/14%20SkyWalking/file-20261021092826711.png)
