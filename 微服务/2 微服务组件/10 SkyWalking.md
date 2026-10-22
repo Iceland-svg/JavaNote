@@ -25,23 +25,23 @@
 
 端口号
 
-![](assets/14%20SkyWalking/file-20261022221019614.png)
+![](assets/10%20SkyWalking/file-20261022222323377.png)
 
-![](assets/14%20SkyWalking/file-20261022221019633.png)
+![](assets/10%20SkyWalking/file-20261022222323374.png)
 
-![](assets/14%20SkyWalking/file-20261022221019615.png)
+![](assets/10%20SkyWalking/file-20261022222323376%201.png)
 
 
 改存储方式为mysql
 
-![](assets/14%20SkyWalking/file-20261022221019613.png)
+![](assets/10%20SkyWalking/file-20261022222323378.png)
 
 修改mysql配置
 
-![](assets/14%20SkyWalking/file-20261022221019616.png)
+![](assets/10%20SkyWalking/file-20261022222323376.png)
 
-![](assets/14%20SkyWalking/file-20261022221019632.png)
+![](assets/10%20SkyWalking/file-20261022222323375.png)
 
-![](assets/14%20SkyWalking/file-20261022221019642.png)
+![](assets/10%20SkyWalking/file-20261022222323367.png)
 
-![](assets/14%20SkyWalking/file-20261022221019659.png)
+![](assets/10%20SkyWalking/file-20261022222323347.png)

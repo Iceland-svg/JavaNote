@@ -89,7 +89,7 @@ public class FeignController {
 
 本地测试需要关闭云服务器上其他服务
 
-![](assets/8%20OpenFeign/file-20261022221006684.png)
+![](assets/4%20OpenFeign/file-20261022222253181.png)
 
 ## 参数传递
 
@@ -214,28 +214,28 @@ public String o4(@RequestBody ProductInfo productInfo){
 
 ### （1）继承
 
-![](assets/8%20OpenFeign/file-20261022221006682.png)
+![](assets/4%20OpenFeign/file-20261022222253182.png)
 
 
-![](assets/8%20OpenFeign/file-20261022221006673.png)
+![](assets/4%20OpenFeign/file-20261022222253183%201.png)
 
 
 
-![](assets/8%20OpenFeign/file-20261022221006676.png)
+![](assets/4%20OpenFeign/file-20261022222253183.png)
 
 
-![](assets/8%20OpenFeign/file-20261022221006678.png)
+![](assets/4%20OpenFeign/file-20261022222253182%201.png)
 
 ### （2）抽取
 
 抽取
-![](assets/8%20OpenFeign/file-20261022221006660.png)
+![](assets/4%20OpenFeign/file-20261022222253192.png)
 
-打包![](assets/8%20OpenFeign/file-20261022221006673.png)
+打包![](assets/4%20OpenFeign/file-20261022222253183%201.png)
 
 服务调用方引入客户端
 
-![](assets/8%20OpenFeign/file-20261022221006665.png)
+![](assets/4%20OpenFeign/file-20261022222253191.png)
 
 ### 服务部署
 
@@ -335,7 +335,7 @@ spring:
 ```
 
 
-![](assets/8%20OpenFeign/file-20261022221006671.png)
+![](assets/4%20OpenFeign/file-20261022222253184.png)
 
 修改order-service pom文件
 
@@ -363,6 +363,6 @@ spring:
 
 父项目没被install也需要install
 
-![](assets/8%20OpenFeign/file-20261022221006658.png)
+![](assets/4%20OpenFeign/file-20261022222253193.png)
 
-![](assets/8%20OpenFeign/file-20261022221006667.png)
+![](assets/4%20OpenFeign/file-20261022222253185.png)

@@ -33,13 +33,13 @@ sentinel:
 
 设置限流
 
-![](assets/12%20sentinel/file-20261022221015141.png)
+![](assets/8%20sentinel/file-20261022222313347.png)
 
 压力测试
 
-![](assets/12%20sentinel/file-20261022221015133.png)
+![](assets/8%20sentinel/file-20261022222313349.png)
 
-![](assets/12%20sentinel/file-20261022221015139.png)
+![](assets/8%20sentinel/file-20261022222313348.png)
 
 
 流控规则
@@ -48,17 +48,17 @@ QPS : 每秒请求数
 
 并发线程数： 
 
-![](assets/12%20sentinel/file-20261022221015131.png)
+![](assets/8%20sentinel/file-20261022222313350.png)
 
 Warm up（冷启动）
 
-![](assets/12%20sentinel/file-20261022221015137.png)
+![](assets/8%20sentinel/file-20261022222313348%201.png)
 
 5秒后增长到QPS = 10
 
 排队等待
 
-![](assets/12%20sentinel/file-20261022221015115.png)
+![](assets/8%20sentinel/file-20261022222313351.png)
 
 超过QPS会等待一个一个排队请求
 
@@ -66,7 +66,7 @@ Warm up（冷启动）
 
 关联
 
-![](assets/12%20sentinel/file-20261022221015111.png)
+![](assets/8%20sentinel/file-20261022222313358.png)
 
 
 当write资源请求QPS大于5，对read进行限流

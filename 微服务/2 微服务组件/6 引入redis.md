@@ -25,6 +25,6 @@ data:
 ```
 
 
-![](assets/10%20引入redis/file-20261022221010822.png)
+![](assets/6%20引入redis/file-20261022222303186.png)
 
 默认redis没有密码
