@@ -1,6 +1,6 @@
-![](assets/1%20MQ工作流程/file-20261022215855689.png)
+![](assets/1%20RabbitMQ简介/file-20261022220003484.png)
 
-![](assets/1%20MQ工作流程/file-20261022215855687.png)
+![](assets/1%20RabbitMQ简介/file-20261022220003485.png)
 ### 实际上RabbitMQ工作模型就是==生产者消费者模型==
 
 
