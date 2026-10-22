@@ -5,7 +5,7 @@
 
 ##### 分布式事务问题 ：
 
-![](assets/13%20Seata/file-20261016104323137.png)
+![](assets/13%20Seata/file-20261022221017273%201.png)
 
 也叫分布式数据一致性问题，此问题是存储资源分布性导致的，比如说数据会存储到不同的数据库，而不同的服务查询的数据库，表都不同
 
@@ -15,7 +15,7 @@
 
 从CAP理论出发解决
 
-![](assets/13%20Seata/file-20261015171438647.png)
+![](assets/13%20Seata/file-20261022221017274.png)
 
 **一致性（Consistency）：** CAP中的一致性指的是强一致性，所有节点在同一时间有相同的数据
 
@@ -25,11 +25,11 @@
 
 一个系统不可能同时满足CAP，所以便出现了，CP, AP架构
 
-![](assets/13%20Seata/file-20261016102806001.png)
+![](assets/13%20Seata/file-20261022221017275.png)
 
 BASE理论
 
-![](assets/13%20Seata/file-20261016102905943.png)
+![](assets/13%20Seata/file-20261022221017273.png)
 
 
 #### 基本可用性: 
@@ -49,7 +49,7 @@ BASE理论
 
 X/OPEN DTP模型
 
-![](assets/13%20Seata/file-20261016104151137.png)
+![](assets/13%20Seata/file-20261022221017277.png)
 
 #### AP: 
 
@@ -63,11 +63,11 @@ resource manager
 
 事务管理器，管理子事务，可以理解为管理RM
 
-![](assets/13%20Seata/file-20261016105242291.png)
+![](assets/13%20Seata/file-20261022221017271.png)
 
 #### 两阶段提交：
 
-![](assets/13%20Seata/file-20261016110003712.png)
+![](assets/13%20Seata/file-20261022221017246.png)
 
 #### 阻塞问题：
 
@@ -91,7 +91,7 @@ resource manager
 
 ### 三阶段提交
 
-![](assets/13%20Seata/file-20261016112050754.png)
+![](assets/13%20Seata/file-20261022221017252.png)
 
 改进:
 
@@ -120,7 +120,7 @@ try阶段成功进入confirm阶段，使用之前预留资源
 
 try阶段失败进入cancel阶段，参与者回滚try阶段执行的操作
 
-![](assets/13%20Seata/file-20261016114949212.png)
+![](assets/13%20Seata/file-20261022221017239.png)
 
 ### Seata部署
 
@@ -202,25 +202,25 @@ store:
 
 双击seata-server.bat启动
 
-![](assets/13%20Seata/file-20261017105620375.png)
+![](assets/13%20Seata/file-20261022221017249.png)
 
 访问界面
 
-![](assets/13%20Seata/file-20261017105646374.png)
+![](assets/13%20Seata/file-20261022221017236.png)
 
 登录
 
-![](assets/13%20Seata/file-20261017105732321.png)
+![](assets/13%20Seata/file-20261022221017219.png)
 
 linux部署
 
 省略修改配置文件
 
-![](assets/13%20Seata/file-20261017113825596.png)
+![](assets/13%20Seata/file-20261022221017241.png)
 
 启动
 
-![](assets/13%20Seata/file-20261017114525115.png)
+![](assets/13%20Seata/file-20261022221017190.png)
 
 未指定端口会导致nacos服务以内网ip注册
 
@@ -242,12 +242,12 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 
 修改配置文件
 
-![](assets/13%20Seata/file-20261019084407189.png) 
+![](assets/13%20Seata/file-20261022221017196.png) 
 ### XA模式
 
-![](assets/13%20Seata/file-20261019085511493.png)
+![](assets/13%20Seata/file-20261022221017233.png)
 
-![](assets/13%20Seata/file-20261019090001433.png)
+![](assets/13%20Seata/file-20261022221017227.png)
 
 #### 优点：
 
@@ -263,16 +263,16 @@ bash seata-server.sh -h 120.77.216.183 -p 8091
 
 ### AT模式
 
-![](assets/13%20Seata/file-20261019094009362.png)
+![](assets/13%20Seata/file-20261022221017187.png)
 
-![](assets/13%20Seata/file-20261019094957773.png)
+![](assets/13%20Seata/file-20261022221017203.png)
 
-![](assets/13%20Seata/file-20261019095238482.png)
+![](assets/13%20Seata/file-20261022221017176.png)
 
 ### TCC
-![](assets/13%20Seata/file-20261019140900899.png)
+![](assets/13%20Seata/file-20261022221017172.png)
 
-![](assets/13%20Seata/file-20261019142454611.png)
+![](assets/13%20Seata/file-20261022221017165.png)
 
 幂等控制
 

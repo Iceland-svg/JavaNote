@@ -1,4 +1,4 @@
-![](assets/11%20SringCloudConfig/file-20260928153916190.png)
+![](assets/11%20SringCloudConfig/file-20261022221012965.png)
 ### 1 配置服务器
 
 搭建ConfigServer
@@ -40,19 +40,19 @@ public class ConfigServerApplication {
 
 完善配置
 
-![](assets/11%20SringCloudConfig/file-20260928162157117.png)
+![](assets/11%20SringCloudConfig/file-20261022221012963.png)
 
 初始化git仓库
 
 测试
 
-![](assets/11%20SringCloudConfig/file-20260928162615358.png)
+![](assets/11%20SringCloudConfig/file-20261022221012944.png)
 ### 2 配置客户端
 
 配置管理
 
 
-![](assets/11%20SringCloudConfig/file-20260928164337331.png)
+![](assets/11%20SringCloudConfig/file-20261022221012947.png)
 
 添加依赖
 
@@ -100,7 +100,7 @@ public class ConfigController {
 
 汇总
 
-![](assets/11%20SringCloudConfig/file-20260929102616339.png)
+![](assets/11%20SringCloudConfig/file-20261022221012940.png)
 ### 3 版本控制集成
 
 
