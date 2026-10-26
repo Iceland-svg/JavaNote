@@ -8,3 +8,20 @@
 ![](assets/2%20Nacos集成解决方案/file-20261026145227179.png)
 
 ![](assets/2%20Nacos集成解决方案/file-20261026145242216.png)
+
+引入核心依赖
+
+```
+<dependency>  
+    <groupId>com.alibaba.cloud</groupId>  
+    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>  
+</dependency>   
+<dependency>  
+    <groupId>com.alibaba.cloud</groupId>  
+    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>  
+</dependency>
+```
+
+创建bootStarp.yaml文件
+
+![](assets/2%20Nacos集成解决方案/file-20261026145940628.png)
