@@ -51,4 +51,10 @@ logging:
     console: '[%thread] %-5level %logger{36} - %msg%n'
 ```
 
-都配置为环境变量
+配置环境变量
+
+![](assets/2%20Nacos集成解决方案/file-20261026152444096.png)
+
+
+
+![](assets/2%20Nacos集成解决方案/file-20261026152423693.png)
