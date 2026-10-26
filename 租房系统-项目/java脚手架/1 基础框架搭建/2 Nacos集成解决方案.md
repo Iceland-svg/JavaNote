@@ -50,3 +50,5 @@ logging:
   pattern:  
     console: '[%thread] %-5level %logger{36} - %msg%n'
 ```
+
+都配置为环境变量
